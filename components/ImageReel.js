@@ -49,6 +49,7 @@ export default function ImageReel({ images }) {
       responsive={responsive}
       ssr={true}
       infinite={true}
+      minimumTouchDrag={10}
       //autoPlay={this.props.deviceType !== "mobile" ? true : false}
       //autoPlay={true}
       //autoPlaySpeed={1000}
@@ -56,10 +57,11 @@ export default function ImageReel({ images }) {
       //customTransition="all .5"
       //transitionDuration={500}
       containerClass="py-5"
-      removeArrowOnDeviceType={["tablet", "mobile"]}
+      //removeArrowOnDeviceType={["tablet", "mobile"]}
       //deviceType={this.props.deviceType}
       //dotListClass="custom-dot-list-style"
-      itemClass="mx-1">
+      itemClass="mx-1"
+    >
       {images.map((image, index) => {
         return <Image src={image} key={index} />;
       })}
