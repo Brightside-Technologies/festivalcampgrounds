@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 import Link from "next/link";
 
 // TODO: remove disabled property
 const links = [
   { href: "/", label: "Home", isDisabled: false },
   { href: "/about-us", label: "About Us", isDisabled: false },
-  { href: "/camp", label: "Camp", isDisabled: true },
+  { href: "/camps", label: "Camps", isDisabled: false },
   { href: "/info", label: "Info", isDisabled: true },
   { href: "/contact", label: "Contact", isDisabled: true }
 ];
@@ -26,9 +27,11 @@ const NavbarBrand = styled.a`
 const NavbarCollapse = styled.div`
   &.show,
   &.collapsing {
-    padding: 0.5rem;
-    background-color: white;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    @media (max-width: 575px) {
+      padding: 0.5rem;
+      background-color: white;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    }
   }
 `;
 
@@ -92,45 +95,80 @@ const NavLink = styled.a`
   &.disabled {
     color: rgba(0, 0, 0, 0.3) !important;
   }
+
+  @media (min-width: 576px) {
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 3px;
+      background: black;
+      transition: width 0.3s;
+      bottom: 0;
+      left: 0;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
 `;
 
-const Nav = () => (
-  <Navbar className="shadow-sm navbar navbar-light bg-light fixed-top navbar-expand-sm">
-    <NavbarBrand className="navbar-brand" href="/">
-      <img
-        src="https://www.festivalcampgrounds.com/wp-content/uploads/2019/01/logo_black_03.png"
-        className="d-inline-block align-top"
-        alt=""
-      />
-    </NavbarBrand>
-    <NavbarBurger
-      className="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navlinks"
-      aria-controls="navbarText"
-      aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </NavbarBurger>
-    <NavbarCollapse className="collapse navbar-collapse" id="navlinks">
-      <ul className="navbar-nav mr-auto">
-        {links.map((link, index) => (
-          <li key={index} className="nav-item">
-            <NavLink
-              className={`font-weight-bold text-dark nav-link${
-                link.isDisabled ? " disabled" : ""
-              }`}
-              href={link.href}>
-              {link.label}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-    </NavbarCollapse>
-  </Navbar>
-);
+const NavItem = styled.li`
+  &.active {
+    a {
+      color: #f4778d !important;
+    }
+  }
+`;
 
-export default Nav;
+export default function Nav() {
+  const router = useRouter();
+  return (
+    <Navbar className="shadow-sm navbar navbar-light bg-light fixed-top navbar-expand-sm">
+      <NavbarBrand className="navbar-brand" href="/">
+        <img
+          src="https://www.festivalcampgrounds.com/wp-content/uploads/2019/01/logo_black_03.png"
+          className="d-inline-block align-top"
+          alt=""
+        />
+      </NavbarBrand>
+      <NavbarBurger
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navlinks"
+        aria-controls="navbarText"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </NavbarBurger>
+      <NavbarCollapse className="collapse navbar-collapse" id="navlinks">
+        <ul className="navbar-nav mr-auto">
+          {links.map((link, index) => (
+            <NavItem
+              key={index}
+              className={`nav-item ${
+                link.href === router.pathname ? "active" : ""
+              }`}
+            >
+              <NavLink
+                className={`font-weight-bold text-dark nav-link${
+                  link.isDisabled ? " disabled" : ""
+                }`}
+                href={link.href}
+              >
+                {link.label}
+              </NavLink>
+            </NavItem>
+          ))}
+        </ul>
+      </NavbarCollapse>
+    </Navbar>
+  );
+}

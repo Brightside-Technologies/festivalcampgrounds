@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Ranch 51",
+    "subtitle": "Date Garden",
+    "directions": "https://www.google.com/maps/place/83272+51st+Ave,+Coachella,+CA+92236/@33.6784017,-116.2134364,17z/data=!3m1!4b1!4m5!3m4!1s0x80da580c6cb56689:0xd13bbc585bce8c8b!8m2!3d33.6783973!4d-116.2112424",
+    "image": "https://i1.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/01/04.jpg?ssl=1",
+    "address": "83272 51st Ave, Coachella, CA 92236",
+    "description": "A retreat place that unlocks the door to a wonder in harmony with nature. Imagine being in a garden of hundreds of palm trees with unlimited shade and green lush grass, Beautiful Mountain views enjoying nature by sleeping under the stars.",
+    "slug": "ranch-51",
+    "options": [
+      {
+        "name": "Superior Tent",
+        "starting_price": 399,
+        "bed": 2,
+        "style": "Fully Furnished",
+        "capacity": "2 people",
+        "size": "16' x 16'",
+        "guests": "$79 per night (unlimited)",
+        "slug": "superior-tent-51"
+      }
+    ]
+  },
+  {
+    "name": "Rancho Alvarado",
+    "subtitle": "",
+    "directions": "https://www.google.com/maps/place/50656+Calhoun+St,+Coachella,+CA+92236/@33.6806444,-116.2089578,17z/data=!3m1!4b1!4m5!3m4!1s0x80da58735fb21f29:0x77bc9623558ef52a!8m2!3d33.6806444!4d-116.2067691",
+    "image": "https://i1.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/01/rancho_alvarado.jpg?fit=1900%2C500&ssl=1",
+    "address": "50656 Calhoun Street, Coachella, CA 92236",
+    "description": "Located less than 2 miles from Coachella festival. A beautiful Ranch with gorgeous fountains, palm trees with unlimited shade. Your always welcome to relax by dipping in our pool while being surrounded by nature, lay on our macas or just hang out on our lounge sitting areas.",
+    "slug": "rancho-alvarado",
+    "options": [
+      {
+        "name": "Superior Tent",
+        "starting_price": 399,
+        "bed": 2,
+        "style": "Fully Furnished",
+        "capacity": "2 people",
+        "size": "16' x 16'",
+        "guests": "$79 per night (unlimited)",
+        "slug": "superior-tent-51"
+      }
+    ]
+  }
+]

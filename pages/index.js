@@ -1,4 +1,3 @@
-// import React from "react";
 import styled from "styled-components";
 import Layout from "../containers/Layout";
 import Testimonials from "../components/Testimonials";
@@ -134,12 +133,14 @@ export default function HomePage() {
           id="hero-carousel"
           className="carousel slide"
           data-interval={false} //TOD: remove
-          data-ride="carousel">
+          data-ride="carousel"
+        >
           <ol className="carousel-indicators">
             <li
               data-target="#hero-carousel"
               data-slide-to="0"
-              className="active"></li>
+              className="active"
+            ></li>
             <li data-target="#hero-carousel" data-slide-to="1"></li>
             <li data-target="#hero-carousel" data-slide-to="2"></li>
           </ol>
@@ -187,20 +188,24 @@ export default function HomePage() {
             className="carousel-control-prev"
             href="#hero-carousel"
             role="button"
-            data-slide="prev">
+            data-slide="prev"
+          >
             <span
               className="carousel-control-prev-icon"
-              aria-hidden="true"></span>
+              aria-hidden="true"
+            ></span>
             <span className="sr-only">Previous</span>
           </a>
           <a
             className="carousel-control-next"
             href="#hero-carousel"
             role="button"
-            data-slide="next">
+            data-slide="next"
+          >
             <span
               className="carousel-control-next-icon"
-              aria-hidden="true"></span>
+              aria-hidden="true"
+            ></span>
             <span className="sr-only">Previous</span>{" "}
           </a>
         </Carousel>
@@ -302,7 +307,8 @@ export default function HomePage() {
               return (
                 <div
                   key={index}
-                  className="card bg-dark text-white rounded-0 border-0">
+                  className="card bg-dark text-white rounded-0 border-0"
+                >
                   <img
                     src={image}
                     className="card-img rounded-0 border-0"
