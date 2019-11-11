@@ -11,12 +11,15 @@
       {
         "name": "Superior Tent",
         "starting_price": 399,
-        "bed": 2,
+        "bed_count": 2,
         "style": "Fully Furnished",
         "capacity": "2 people",
         "size": "16' x 16'",
         "guests": "$79 per night (unlimited)",
-        "slug": "superior-tent-51"
+        "slug": "superior-tent-51",
+        "images": [
+          "https://www.festivalcampgrounds.com/wp-content/uploads/2019/01/21.jpg"
+        ]
       }
     ]
   },
@@ -32,12 +35,15 @@
       {
         "name": "Superior Tent",
         "starting_price": 399,
-        "bed": 2,
+        "bed_count": 2,
         "style": "Fully Furnished",
         "capacity": "2 people",
         "size": "16' x 16'",
         "guests": "$79 per night (unlimited)",
-        "slug": "superior-tent-51"
+        "slug": "superior-tent-51",
+        "images": [
+          "https://www.festivalcampgrounds.com/wp-content/uploads/2019/01/21.jpg"
+        ]
       }
     ]
   }

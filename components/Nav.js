@@ -154,7 +154,13 @@ export default function Nav() {
             <NavItem
               key={index}
               className={`nav-item ${
-                link.href === router.pathname ? "active" : ""
+                link.href === "/"
+                  ? router.pathname === "/"
+                    ? "active"
+                    : ""
+                  : router.pathname.includes(link.href)
+                  ? "active"
+                  : ""
               }`}
             >
               <NavLink

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 import PageTitle from "../components/PageTitle";
 import Layout from "../containers/Layout";
@@ -47,12 +48,12 @@ export default function CampsPage({ data, metadata }) {
                             </p>
                           </div>
                           <div className="d-flex justify-content-start">
-                            <a
-                              href={`/camps/${camp.slug}`}
-                              className="btn btn-primary"
+                            <Link
+                              href="/camps/[slug]"
+                              as={`/camps/${camp.slug}`}
                             >
-                              Details
-                            </a>
+                              <a className="btn btn-primary">Details</a>
+                            </Link>
                           </div>
                         </div>
                       </div>
