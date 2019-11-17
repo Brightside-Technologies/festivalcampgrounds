@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "title": "About Us | Festival Campgrounds",
+    "description": ""
+  },
+  "hero_image": "http://www.festivalcampgrounds.com/wp-content/uploads/2019/01/Coachella_2014_sunset.jpg",
+  "images": [
+    "/images/superior-tent-02.jpg",
+    "/images/signature-tent-02.jpg",
+    "/images/deluxe-tent-03.jpg",
+    "/images/about-us-01.jpg",
+    "/images/about-us-02.jpg",
+    "/images/about-us-03.jpg",
+    "/images/image-04.jpg",
+    "/images/image-05.jpg",
+    "/images/image-06.jpg",
+    "/images/image-07.jpg",
+    "/images/image-08.jpg"
+  ],
+  "title": "Festival Campgrounds Presents",
+  "subtitle": "The Coachella Ranch Glamping Experience",
+  "amenities": [
+    {
+      "icon": "far fa-grin-hearts",
+      "text": "Beauty Bar"
+    },
+    {
+      "icon": "far fa-eye",
+      "text": "24hr Security/Surveillance"
+    },
+    {
+      "icon": "fas fa-charging-station",
+      "text": "Charging Stations"
+    },
+    {
+      "icon": "fas fa-shower",
+      "text": "Hot/Cold Showers"
+    },
+    {
+      "icon": "fas fa-utensils",
+      "text": "Local Food Trucks"
+    },
+    {
+      "icon": "fas fa-music",
+      "text": "Music"
+    },
+    {
+      "icon": "fas fa-swimming-pool",
+      "text": "Pool"
+    },
+    {
+      "icon": "fas fa-toilet",
+      "text": "Restroom Trailers (Flushable Toilets)"
+    },
+    {
+      "icon": "fas fa-helicopter",
+      "text": "Helicopter Rides (Landing @ Rancho 51)"
+    },
+    {
+      "icon": "fas fa-shuttle-van",
+      "text": "Shuttle Service"
+    },
+    {
+      "icon": "fas fa-map-marker-alt",
+      "text": "Location!!! Les than 2 miles from festival grounds"
+    },
+    {
+      "icon": "fas fa-bicycle",
+      "text": "Electric Bike Rental by Pedego"
+    }
+  ],
+  "amenities_images": [
+    "/images/yoga.jpg",
+    "/images/food-truck.jpg",
+    "/images/image-01.jpg",
+    "/images/helicopter.jpg",
+    "/images/pedego.jpg",
+    "/images/image-02.jpg",
+    "/images/image-03.jpg"
+  ],
+  "content": ""
+}

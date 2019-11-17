@@ -19,6 +19,7 @@
         "next-ga": "^2.3.4",
         "react": "16.11.0",
         "react-dom": "16.11.0",
+        "react-markdown": "^4.2.2",
         "react-multi-carousel": "^2.4.0",
         "styled-components": "^4.4.1"
     },

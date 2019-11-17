@@ -1,0 +1,182 @@
+[
+  {
+    "name": "Superior Tent",
+    "starting_price_per_night": 399,
+    "minimum_stay": 3,
+    "bed_count": 2,
+    "style": "Fully Furnished",
+    "capacity": 2,
+    "max_capacity": 10,
+    "area": 300,
+    "size": "16' x 16'",
+    "guests": "$79 per night (unlimited)",
+    "slug": "superior-tent",
+    "images": [
+      "/images/superior-tent-01.jpg",
+      "/images/superior-tent-02.jpg",
+      "/images/superior-tent-03.jpg"
+    ],
+    "amenities": [
+      {
+        "icon": "fas fa-star",
+        "text": "Bedside Table"
+      },
+      {
+        "icon": "fas fa-star",
+        "text": "Blankets"
+      },
+      {
+        "icon": "fas fa-star",
+        "text": "Lantern"
+      },
+      {
+        "icon": "fas fa-star",
+        "text": "Lounge Chair"
+      },
+      {
+        "icon": "fas fa-star",
+        "text": "Rug"
+      },
+      {
+        "icon": "fas fa-star",
+        "text": "Throw Pillows"
+      }
+    ],
+    "details": "# This is a header\n\nAnd this is a paragraph"
+  },
+  {
+    "name": "Deluxe Tent",
+    "starting_price_per_night": 299,
+    "minimum_stay": 3,
+    "bed_count": 1,
+    "style": "Fully Furnished",
+    "capacity": 2,
+    "max_capacity": 10,
+    "area": 300,
+    "size": "16' x 16'",
+    "guests": "$79 per night (unlimited)",
+    "slug": "deluxe-tent",
+    "images": [
+      "/images/deluxe-tent-01.jpg",
+      "/images/deluxe-tent-02.jpg",
+      "/images/deluxe-tent-03.jpg"
+    ],
+    "amenities": [
+      {
+        "icon": "fas fa-star",
+        "text": "Bedside Table"
+      },
+      {
+        "icon": "fas fa-star",
+        "text": "Blankets"
+      },
+      {
+        "icon": "fas fa-star",
+        "text": "Lantern"
+      },
+      {
+        "icon": "fas fa-star",
+        "text": "Lounge Chair"
+      },
+      {
+        "icon": "fas fa-star",
+        "text": "Rug"
+      },
+      {
+        "icon": "fas fa-star",
+        "text": "Throw Pillows"
+      }
+    ],
+    "details": "# This is a header\n\nAnd this is a paragraph"
+  },
+  {
+    "name": "Signature Tent",
+    "starting_price_per_night": 199,
+    "minimum_stay": 3,
+    "bed_count": 0,
+    "style": "Unfurnished",
+    "capacity": 2,
+    "max_capacity": 10,
+    "area": 300,
+    "size": "16' x 16'",
+    "guests": "$79 per night (unlimited)",
+    "slug": "signature-tent",
+    "images": [
+      "/images/signature-tent-01.jpg",
+      "/images/signature-tent-02.jpg",
+      "/images/signature-tent-03.jpg"
+    ],
+    "amenities": [
+      {
+        "icon": "far fa-grin-hearts",
+        "text": "Beauty Bar"
+      },
+      {
+        "icon": "far fa-eye",
+        "text": "24hr Security/Surveillance"
+      },
+      {
+        "icon": "fas fa-charging-station",
+        "text": "Charging Stations"
+      },
+      {
+        "icon": "fas fa-shower",
+        "text": "Hot/Cold Showers"
+      },
+      {
+        "icon": "fas fa-utensils",
+        "text": "Local Food Trucks"
+      },
+      {
+        "icon": "fas fa-music",
+        "text": "Music"
+      },
+      {
+        "icon": "fas fa-swimming-pool",
+        "text": "Pool"
+      },
+      {
+        "icon": "fas fa-toilet",
+        "text": "Restroom Trailers (Flushable Toilets)"
+      }
+    ],
+    "details": "# This is a header\n\nAnd this is a paragraph"
+  },
+  {
+    "name": "BYO Tent",
+    "starting_price_per_night": 120,
+    "minimum_stay": 3,
+    "bed_count": 0,
+    "style": "Bring your own tent",
+    "capacity": 2,
+    "max_capacity": 10,
+    "area": 300,
+    "size": "12' x 12'",
+    "guests": "$79 per night (unlimited)",
+    "slug": "byo-tent",
+    "images": ["/images/BYO03.jpg", "/images/BYO01.jpg", "/images/BYO04.jpg"],
+    "amenities": [
+      {
+        "icon": "far fa-eye",
+        "text": "24hr Security/Surveillance"
+      },
+      {
+        "icon": "fas fa-charging-station",
+        "text": "Charging Stations"
+      },
+      {
+        "icon": "fas fa-shower",
+        "text": "Hot/Cold Showers"
+      },
+      {
+        "icon": "fas fa-utensils",
+        "text": "Local Food Trucks"
+      },
+      {
+        "icon": "fas fa-toilet",
+        "text": "Restroom Trailers (Flushable Toilets)"
+      }
+    ],
+    "details": "# This is a header\n\nAnd this is a paragraph"
+  }
+]

@@ -1,7 +1,10 @@
 - ~~set navbar links to active based on current url~~
-- create page title component with responsive typography
 - add animation
-- style carousel dots
 - include all pictures in project
 - include files of dependencies in project
 - google analytics
+- create components
+  - ~~BackButton~~
+  - Title (w/ responsive typography)
+  - CarouselDots
+  - Icon

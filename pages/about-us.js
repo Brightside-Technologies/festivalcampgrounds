@@ -9,7 +9,7 @@ const Hero = styled.section`
   flex-direction: column;
   justify-content: space-between;
   height: calc(100vh - 3.25rem);
-  background: url(https://i0.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/01/31.jpg?fit=1440%2C600&ssl=1);
+  background: ${props => `url(${props.bgImage})`};
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -31,40 +31,51 @@ const SectionWithImage = styled.section`
   min-height: 500px;
 `;
 
-const Title = styled.h1`
-  z-index: 1;
-  padding-top: 2rem;
+const Icon = styled.i`
+  height: 36px;
+  width: 36px;
+  margin-right: 0.5rem;
 `;
 
-const images = [
-  "https://i1.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/01/19.jpg?fit=1024%2C683&ssl=1",
-  "https://i2.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/01/20-1.jpg?fit=1024%2C683&ssl=1",
-  "https://i1.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/02/site-1.jpg?fit=700%2C525&ssl=1",
-  "https://i2.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/02/site-2.jpg?fit=700%2C525&ssl=1",
-  "https://i2.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/02/site-4.jpg?fit=700%2C525&ssl=1",
-  "https://i2.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/01/35.jpg?ssl=1",
-  "https://i1.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/01/04.jpg?ssl=1",
-  "https://i2.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/02/site-3.jpg?fit=700%2C525&ssl=1",
-  "https://i1.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/01/BYO03.jpg?fit=1024%2C681&ssl=1"
-];
+const Alert = styled.div`
+  padding: 10px;
+  border-left: 6px solid;
+  border-left-color: #f4778d;
+  border-radius: 5px;
+  background-color: #fae7e8;
+  border-color: #e45460;
+`;
 
-export default function AboutUsPage() {
-  const title = "About Us - Festival Campgrounds";
-  const description = "";
+export default function AboutUsPage({ metadata, data }) {
+  const { title: page_title, description } = metadata;
+  const {
+    images,
+    title,
+    subtitle,
+    hero_image,
+    amenities,
+    amenities_images
+  } = data;
+
   return (
-    <Layout title={title} description={description}>
-      <Hero>
+    <Layout title={page_title} description={description}>
+      <Hero bgImage={hero_image}>
         <HeroBody className="container">
-          <Title className="position-absolute display-4 text-white font-weight-bold">
-            About Us
-          </Title>
+          <div
+            className="position-absolute d-flex flex-column align-items-center justify-content-center"
+            style={{ zIndex: 10 }}
+          >
+            <h1 className="text-center my-5 display-4 text-white font-weight-bold">
+              About Us
+            </h1>
+            <h2 className="text-center h1 text-white">{title}</h2>
+            <h3 className="text-center text-white h5">{subtitle}</h3>
+          </div>
         </HeroBody>
         <Mask />
       </Hero>
       <section className="section">
         <div className="container">
-          <h1>Festival Campgrounds Presents</h1>
-          <p>The Coachella Ranch Glamping Experience</p>
           <p className="py-2">
             With two Ranch’s in the city of Coachella, less than 2 miles away
             from the festival grounds. Get the Desert life experience under the
@@ -84,10 +95,62 @@ export default function AboutUsPage() {
       </section>
       <section className="section px-0">
         <div className="container-fluid px-0">
-          <ImageReel images={images} />
+          <ImageReel
+            containerClass="h-100"
+            itemClass="mx-1"
+            centerMode={true}
+            images={images}
+          />
         </div>
       </section>
+      <section className="section">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6">
+              <h2>Everything you need for the maximum experience</h2>
+              {amenities.map(a => {
+                return (
+                  <div className="d-flex align-items-center">
+                    {a.icon && <Icon className={a.icon}></Icon>}
+                    <p className="m-0">{a.text}</p>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="col-md-6">
+              <ImageReel containerClass="h-100" images={amenities_images} />
+            </div>
+            <div className="col-sm-12 mt-3">
+              <Alert>
+                To book your hair & makeup email us to &nbsp;
+                <a
+                  className="text-dark font-weight-bold"
+                  href="mailto:info@festivalcampgrounds.com"
+                >
+                  info@festivalcampgrounds.com
+                </a>
+              </Alert>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <SectionWithImage className="section"></SectionWithImage>
     </Layout>
   );
 }
+
+AboutUsPage.getInitialProps = async () => {
+  const dataAsync = import("../_data/pages/about-us.json");
+
+  const promises = [dataAsync].map(p => p.then(res => res.default));
+
+  const [page_data] = await Promise.all(promises);
+
+  const { metadata, ...data } = page_data;
+
+  return {
+    data,
+    metadata
+  };
+};

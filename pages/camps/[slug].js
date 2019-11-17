@@ -41,6 +41,7 @@ const BackButon = styled.a`
 export default function CampDetailsPage() {
   const router = useRouter();
   const [camp, setCamp] = React.useState(null);
+  const [campingOptions, setCampingOptions] = React.useState(null);
 
   React.useEffect(() => {
     async function getData() {
@@ -48,12 +49,23 @@ export default function CampDetailsPage() {
       const data = await import("../../_data/camps.json");
       const camp = data.default.filter(items => items.slug === slug)[0];
       setCamp(camp);
+      const campingOptionsData = await import(
+        "../../_data/camping-options.json"
+      );
+      let options = campingOptionsData.default;
+      const mergedOptions = camp.options.map(item => {
+        const slug = Object.keys(item)[0];
+        const option = options.filter(o => o.slug === slug)[0];
+        return { ...option, ...item[slug] };
+      });
+      setCampingOptions(mergedOptions);
     }
     getData();
   }, []);
 
   return (
-    camp && (
+    camp &&
+    campingOptions && (
       <Layout title="" description="">
         <Hero bgImg={camp.image}>
           <BackButon className="btn btn-sm btn-outline-light" href="/camps">
@@ -63,9 +75,16 @@ export default function CampDetailsPage() {
             <span className="font-weight-bold text-uppercase">Camps</span>
           </BackButon>
           <HeroBody className="container">
-            <Title className="position-absolute display-4 text-white font-weight-bold">
-              {camp.name}
-            </Title>
+            <div className="position-absolute" style={{ zIndex: 5 }}>
+              <Title className="mb-0 display-4 text-white font-weight-bold text-center">
+                {camp.name}
+              </Title>
+              {camp.subtitle && (
+                <Title className="p-0 m-0 h1 text-light text-center">
+                  {camp.subtitle}
+                </Title>
+              )}
+            </div>
           </HeroBody>
           <Mask />
         </Hero>
@@ -81,47 +100,35 @@ export default function CampDetailsPage() {
         <section className="section">
           <div className="container">
             <div className="row">
-              {camp.options.map((option, index) => {
+              {campingOptions.map((option, index) => {
                 return (
                   <div key={index} className="col-lg-12">
-                    <div className="card mb-3 rounded-0">
+                    <div className="card bg-dark text-light mb-3 rounded-0">
                       <div className="row no-gutters">
-                        <div className="col-md-4 d-flex">
+                        <div className="col-md-6 col-lg-4 d-flex">
                           <div className="card-body d-flex flex-column justify-content-between">
                             <div>
                               <h4 className="card-title">{option.name}</h4>
-                              <h5 className="card-text text-muted">{`From $${option.starting_price}`}</h5>
+                              <h5 className="card-text text-muted">{`From $${option.starting_price_per_night} per night`}</h5>
                               <div className="pt-3">
                                 <p>Bed(s): {option.bed_count}</p>
                                 <p>Style: {option.style}</p>
-                                <p>Capacity: {option.capacity}</p>
+                                <p>Capacity: {`${option.capacity} people`}</p>
                                 <p>Size: {option.size}</p>
                                 <p>Guests: {option.guests}</p>
                               </div>
-
-                              {/* <p className="card-text text-muted">
-                                <a
-                                  className="px-0 btn btn-link d-inline-flex align-items-center"
-                                  target="_blank"
-                                  rel="noopener"
-                                  href={camp.directions}
-                                >
-                                  <Icon className="ml-0 fas fa-map-marker-alt"></Icon>{" "}
-                                  {camp.address}
-                                </a>
-                              </p> */}
                             </div>
                             <div className="d-flex justify-content-start">
                               <Link
-                                href="/accomodation/[slug]"
-                                as={`/accomodation/${option.slug}`}
+                                href="/accommodation/[camp]/[slug]"
+                                as={`/accommodation/${camp.slug}/${option.slug}`}
                               >
                                 <a className="btn btn-primary">Details</a>
                               </Link>
                             </div>
                           </div>
                         </div>
-                        <div className="col-md-8">
+                        <div className="col-md-6 col-lg-8">
                           <img
                             src={option.images[0]}
                             className="card-img rounded-0"
