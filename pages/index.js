@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import Layout from "../containers/Layout";
 import Testimonials from "../components/Testimonials";
@@ -43,6 +44,14 @@ export default function HomePage({ data, metadata }) {
   const { camping_options, testimonials, images, hero_carousel } = data;
 
   const featuredTestimonial = testimonials.filter(t => t.featured)[0];
+
+  React.useEffect(() => {
+    async function init() {
+      await import("bootstrap/js/dist/util");
+      await import("bootstrap/js/dist/carousel");
+    }
+    init();
+  }, []);
 
   return (
     <Layout title={title} description={description}>

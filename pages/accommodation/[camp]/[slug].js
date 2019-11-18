@@ -42,7 +42,17 @@ const Icon = styled.i`
   margin-right: 0.5rem;
 `;
 
-export default function CampDetailsPage() {
+const BackButtonWithRef = React.forwardRef(
+  ({ children, href, className }, ref) => {
+    return (
+      <BackButton ref={ref} href={href} className={className}>
+        {children}
+      </BackButton>
+    );
+  }
+);
+
+export default function OptionDetailsPage() {
   const router = useRouter();
   const { slug, camp: campSlug } = router.query;
   const [campingOption, setCampingOption] = React.useState(null);
@@ -82,14 +92,14 @@ export default function CampDetailsPage() {
       <Layout title={`${camp.name} | ${campingOption.name}`} description="">
         <Hero bgImg={campingOption.images[0]}>
           <Link href="/camps/[slug]" as={`/camps/${campSlug}`} passHref>
-            <BackButton className="btn btn-sm btn-outline-light">
+            <BackButtonWithRef className="btn btn-sm btn-outline-light">
               <span className="icon">
                 <i className="fas fa-arrow-left" />
               </span>
               <span className="font-weight-bold text-uppercase">
                 {camp.name}
               </span>
-            </BackButton>
+            </BackButtonWithRef>
           </Link>
           <HeroBody className="container">
             <Title className="pt-5 position-absolute display-4 text-white font-weight-bold">
@@ -129,9 +139,12 @@ export default function CampDetailsPage() {
                           <Heading className="h6 text-uppercase">
                             Amenities
                           </Heading>
-                          {campingOption.amenities.map(a => {
+                          {campingOption.amenities.map((a, index) => {
                             return (
-                              <div className="d-flex align-items-center">
+                              <div
+                                key={index}
+                                className="d-flex align-items-center"
+                              >
                                 {a.icon && <Icon className={a.icon}></Icon>}
                                 <p className="m-0">{a.text}</p>
                               </div>
@@ -148,7 +161,12 @@ export default function CampDetailsPage() {
         </section>
         <section className="section px-0">
           <div className="container-fluid px-0">
-            <ImageReel images={campingOption.images} />
+            <ImageReel
+              containerClass="h-100"
+              itemClass="mx-1"
+              centerMode={true}
+              images={campingOption.images}
+            />
           </div>
         </section>
       </Layout>

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 // TODO: remove disabled property
 const links = [
@@ -126,11 +125,20 @@ const NavItem = styled.li`
 
 export default function Nav() {
   const router = useRouter();
+
+  React.useEffect(() => {
+    async function init() {
+      await import("bootstrap/js/dist/util");
+      await import("bootstrap/js/dist/collapse");
+    }
+    init();
+  }, []);
+
   return (
     <Navbar className="shadow-sm navbar navbar-light bg-light fixed-top navbar-expand-sm">
       <NavbarBrand className="navbar-brand" href="/">
         <img
-          src="https://www.festivalcampgrounds.com/wp-content/uploads/2019/01/logo_black_03.png"
+          src="/images/logo_black.png"
           className="d-inline-block align-top"
           alt=""
         />

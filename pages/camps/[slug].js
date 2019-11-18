@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 import Layout from "../../containers/Layout";
 import Mask from "../../components/Mask";
+import BackButton from "../../components/BackButton";
 
 const Hero = styled.section`
   align-items: stretch;
@@ -29,14 +30,15 @@ const Title = styled.h1`
   padding-top: 2rem;
 `;
 
-const BackButon = styled.a`
-  position: absolute;
-  z-index: 5;
-  margin: 0.5rem;
-  .icon {
-    margin-right: 0.25rem;
+const BackButtonWithRef = React.forwardRef(
+  ({ children, href, className }, ref) => {
+    return (
+      <BackButton ref={ref} href={href} className={className}>
+        {children}
+      </BackButton>
+    );
   }
-`;
+);
 
 export default function CampDetailsPage() {
   const router = useRouter();
@@ -68,12 +70,14 @@ export default function CampDetailsPage() {
     campingOptions && (
       <Layout title="" description="">
         <Hero bgImg={camp.image}>
-          <BackButon className="btn btn-sm btn-outline-light" href="/camps">
-            <span className="icon">
-              <i className="fas fa-arrow-left" />
-            </span>
-            <span className="font-weight-bold text-uppercase">Camps</span>
-          </BackButon>
+          <Link href="/camps" passHref>
+            <BackButtonWithRef className="btn btn-sm btn-outline-light">
+              <span className="icon">
+                <i className="fas fa-arrow-left" />
+              </span>
+              <span className="font-weight-bold text-uppercase">Camps</span>
+            </BackButtonWithRef>
+          </Link>
           <HeroBody className="container">
             <div className="position-absolute" style={{ zIndex: 5 }}>
               <Title className="mb-0 display-4 text-white font-weight-bold text-center">

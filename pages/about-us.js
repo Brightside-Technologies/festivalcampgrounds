@@ -108,9 +108,9 @@ export default function AboutUsPage({ metadata, data }) {
           <div className="row">
             <div className="col-md-6">
               <h2>Everything you need for the maximum experience</h2>
-              {amenities.map(a => {
+              {amenities.map((a, index) => {
                 return (
-                  <div className="d-flex align-items-center">
+                  <div key={index} className="d-flex align-items-center">
                     {a.icon && <Icon className={a.icon}></Icon>}
                     <p className="m-0">{a.text}</p>
                   </div>
