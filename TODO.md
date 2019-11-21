@@ -1,4 +1,3 @@
-- ~~set navbar links to active based on current url~~
 - add animation
 - include all pictures in project
 - include files of dependencies in project
@@ -7,7 +6,5 @@
   - jQuery and popper are still included via CDN
 - google analytics
 - create components
-  - ~~BackButton~~
   - Title (w/ responsive typography)
-  - CarouselDots
   - Icon
