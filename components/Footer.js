@@ -13,19 +13,14 @@ export default function Footer() {
   return (
     <StyledFooter className="bg-dark text-white">
       <hr />
-      <p className="m-0">
-        Made with{" "}
-        {/* <span>
-          <Emoji text=":heart:" />
-        </span>{" "} */}
-        in the Coachella Valley
-      </p>
+      <p className="m-0">Made with &#10084; in the Coachella Valley</p>
       <small>
         By{" "}
         <a
-          className="has-text-weight-bold has-text-white"
+          className="font-weight-bold text-white"
           href="https://www.brightsidetech.io"
-          target="_blank">
+          target="_blank"
+        >
           Brightside Tech
         </a>
       </small>

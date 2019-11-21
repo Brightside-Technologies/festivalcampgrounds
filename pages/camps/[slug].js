@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import Layout from "../../containers/Layout";
 import Mask from "../../components/Mask";
 import BackButton from "../../components/BackButton";
+import Button from "../../components/Button";
 
 const Hero = styled.section`
   align-items: stretch;
@@ -36,6 +37,16 @@ const BackButtonWithRef = React.forwardRef(
       <BackButton ref={ref} href={href} className={className}>
         {children}
       </BackButton>
+    );
+  }
+);
+
+const DetailsButtonWithRef = React.forwardRef(
+  ({ children, href, className }, ref) => {
+    return (
+      <Button ref={ref} href={href} className={className}>
+        {children}
+      </Button>
     );
   }
 );
@@ -93,7 +104,7 @@ export default function CampDetailsPage() {
           <Mask />
         </Hero>
         <section className="section">
-          <div className="container">
+          <div className="container px-0">
             <div className="row">
               <div className="col-sm-12">
                 <p>{camp.description}</p>
@@ -102,12 +113,12 @@ export default function CampDetailsPage() {
           </div>
         </section>
         <section className="section">
-          <div className="container">
+          <div className="container px-0">
             <div className="row">
               {campingOptions.map((option, index) => {
                 return (
-                  <div key={index} className="col-lg-12">
-                    <div className="card bg-dark text-light mb-3 rounded-0">
+                  <div key={index} className="col-lg-12 my-1">
+                    <div className="card shadow mb-3 rounded-0">
                       <div className="row no-gutters">
                         <div className="col-md-6 col-lg-4 d-flex">
                           <div className="card-body d-flex flex-column justify-content-between">
@@ -126,8 +137,11 @@ export default function CampDetailsPage() {
                               <Link
                                 href="/accommodation/[camp]/[slug]"
                                 as={`/accommodation/${camp.slug}/${option.slug}`}
+                                passHref
                               >
-                                <a className="btn btn-primary">Details</a>
+                                <DetailsButtonWithRef>
+                                  Details
+                                </DetailsButtonWithRef>
                               </Link>
                             </div>
                           </div>

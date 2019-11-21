@@ -86,7 +86,7 @@ export default function HomePage({ data, metadata }) {
                     alt={item.title}
                   />
                   <div className="pt-0 pt-sm-5 carousel-caption d-flex flex-column align-items-center">
-                    <h5 className="display-4">{item.title}</h5>
+                    <h5 className="h1 font-weight-bold">{item.title}</h5>
                     <p className="h2">{item.subtitle}</p>
                   </div>
                   <Mask />
@@ -121,7 +121,7 @@ export default function HomePage({ data, metadata }) {
         </Carousel>
       </Hero>
       <section className="section">
-        <div className="container">
+        <div className="container px-0">
           <div className="row">
             <div className="col-sm-4">
               <p className="text-uppercase">The distance</p>
@@ -152,7 +152,7 @@ export default function HomePage({ data, metadata }) {
         </div>
       </section>
       <section className="section">
-        <div className="container">
+        <div className="container px-0">
           <h2 className="h2 text-uppercase">Camping Options</h2>
           <div className="row">
             {camping_options.map((option, index) => {
@@ -183,7 +183,7 @@ export default function HomePage({ data, metadata }) {
         </div>
       </section>
       <section className="section">
-        <div className="container">
+        <div className="container px-0">
           <h2 className="h2 text-uppercase mb-5">
             Here's What Our Customers Are Saying
           </h2>
@@ -210,7 +210,7 @@ export default function HomePage({ data, metadata }) {
         </div>
       </section>
       <section className="section">
-        <div className="container">
+        <div className="container px-0">
           <div className="card-columns">
             {images.map((image, index) => {
               return (

@@ -2,6 +2,7 @@ import Carousel from "react-multi-carousel";
 import styled from "styled-components";
 import ArrowButton from "./ArrowButton";
 import "react-multi-carousel/lib/styles.css";
+import CarouselDot from "./CarouselDot";
 
 const responsive = {
   desktop: {
@@ -43,6 +44,7 @@ export default function ImageReel({
 }) {
   return (
     <Carousel
+      customDot={<CarouselDot />}
       centerMode={centerMode}
       partialVisbile={partialVisible}
       focusOnSelect
@@ -56,16 +58,8 @@ export default function ImageReel({
       ssr={true}
       infinite={true}
       minimumTouchDrag={1}
-      //autoPlay={this.props.deviceType !== "mobile" ? true : false}
-      //autoPlay={true}
-      //autoPlaySpeed={1000}
       keyBoardControl={true}
-      //customTransition="all .5"
-      //transitionDuration={500}
       containerClass={containerClass}
-      // removeArrowOnDeviceType={["tablet", "mobile"]}
-      // deviceType={this.props.deviceType}
-      // dotListClass="mt-5"
       itemClass={itemClass}
     >
       {images.map((image, index) => {

@@ -39,6 +39,7 @@ async function exportPathMap(defaultPathMap, { dev }) {
     };
   }, {});
 
+  // filter our dynamic paths from defaulPathMap
   const {
     ["/accommodation/[camp]/[slug]"]: accommodationsDynamicPath,
     ["/camps/[slug]"]: campsDynamicPath,

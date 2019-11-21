@@ -7,16 +7,67 @@ const links = [
   { href: "/", label: "Home", isDisabled: false },
   { href: "/about-us", label: "About Us", isDisabled: false },
   { href: "/camps", label: "Camps", isDisabled: false },
-  { href: "/info", label: "Info", isDisabled: true },
+  { href: "/info", label: "Info", isDisabled: false },
   { href: "/contact", label: "Contact", isDisabled: true }
 ];
 
+const SocialNavLink = styled.a`
+  display: flex;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  text-decoration: none;
+  line-height: 1.5;
+  padding: 0.5rem 0.75rem;
+  position: relative;
+  font-size: 1.25rem;
+`;
+
 const Navbar = styled.nav`
   height: 3.25rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  align-items: stretch;
+  display: flex;
+`;
+
+const NavItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &.active {
+    a {
+      color: #f4778d !important;
+    }
+  }
+`;
+
+const NavLink = styled.a`
+  &.disabled {
+    color: rgba(0, 0, 0, 0.3) !important;
+  }
+
+  @media (min-width: 576px) {
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 3px;
+      background: black;
+      transition: width 0.3s;
+      bottom: 0;
+      left: 0;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 const NavbarBrand = styled.a`
-  padding: 0;
   height: 100%;
   img {
     max-height: 100%;
@@ -35,14 +86,11 @@ const NavbarCollapse = styled.div`
 `;
 
 const NavbarBurger = styled.button`
-  height: 40px;
-  width: 40px;
   color: #4a4a4a;
   cursor: pointer;
   display: block;
   position: relative;
   margin-left: auto;
-  border-radius: 50%;
   background-color: transparent;
   border: 0;
   z-index: 1;
@@ -90,39 +138,6 @@ const NavbarBurger = styled.button`
   }
 `;
 
-const NavLink = styled.a`
-  &.disabled {
-    color: rgba(0, 0, 0, 0.3) !important;
-  }
-
-  @media (min-width: 576px) {
-    &::after {
-      content: "";
-      display: block;
-      width: 0;
-      height: 3px;
-      background: black;
-      transition: width 0.3s;
-      bottom: 0;
-      left: 0;
-    }
-
-    &:hover {
-      &::after {
-        width: 100%;
-      }
-    }
-  }
-`;
-
-const NavItem = styled.li`
-  &.active {
-    a {
-      color: #f4778d !important;
-    }
-  }
-`;
-
 export default function Nav() {
   const router = useRouter();
 
@@ -143,6 +158,22 @@ export default function Nav() {
           alt=""
         />
       </NavbarBrand>
+      <SocialNavLink
+        className="bg-light text-dark"
+        target="_blank"
+        rel="noopener"
+        href="https://www.instagram.com/festivalcampgrounds/"
+      >
+        <i class="fab fa-instagram"></i>
+      </SocialNavLink>
+      <SocialNavLink
+        className="bg-light text-dark"
+        target="_blank"
+        rel="noopener"
+        href="https://www.facebook.com/festivalcampgrounds"
+      >
+        <i class="fab fa-facebook-f"></i>
+      </SocialNavLink>
       <NavbarBurger
         className="navbar-toggler"
         type="button"
@@ -157,7 +188,7 @@ export default function Nav() {
         <span aria-hidden="true"></span>
       </NavbarBurger>
       <NavbarCollapse className="collapse navbar-collapse" id="navlinks">
-        <ul className="navbar-nav mr-auto">
+        <ul className="navbar-nav ml-auto h-100">
           {links.map((link, index) => (
             <NavItem
               key={index}

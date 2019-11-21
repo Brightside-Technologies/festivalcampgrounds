@@ -23,14 +23,6 @@ const HeroBody = styled.div`
   align-items: center;
 `;
 
-const SectionWithImage = styled.section`
-  background: url(http://www.festivalcampgrounds.com/wp-content/uploads/2019/01/Coachella_2014_sunset.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  min-height: 500px;
-`;
-
 const Icon = styled.i`
   height: 36px;
   width: 36px;
@@ -65,17 +57,17 @@ export default function AboutUsPage({ metadata, data }) {
             className="position-absolute d-flex flex-column align-items-center justify-content-center"
             style={{ zIndex: 10 }}
           >
-            <h1 className="text-center my-5 display-4 text-white font-weight-bold">
+            <h1 className="text-center my-5 text-white font-weight-bold">
               About Us
             </h1>
-            <h2 className="text-center h1 text-white">{title}</h2>
+            <h2 className="text-center text-white">{title}</h2>
             <h3 className="text-center text-white h5">{subtitle}</h3>
           </div>
         </HeroBody>
         <Mask />
       </Hero>
       <section className="section">
-        <div className="container">
+        <div className="container px-0">
           <p className="py-2">
             With two Ranch’s in the city of Coachella, less than 2 miles away
             from the festival grounds. Get the Desert life experience under the
@@ -104,7 +96,7 @@ export default function AboutUsPage({ metadata, data }) {
         </div>
       </section>
       <section className="section">
-        <div className="container">
+        <div className="container px-0">
           <div className="row">
             <div className="col-md-6">
               <h2>Everything you need for the maximum experience</h2>
@@ -134,8 +126,6 @@ export default function AboutUsPage({ metadata, data }) {
           </div>
         </div>
       </section>
-
-      <SectionWithImage className="section"></SectionWithImage>
     </Layout>
   );
 }

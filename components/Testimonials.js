@@ -2,6 +2,7 @@ import Carousel from "react-multi-carousel";
 import styled from "styled-components";
 import ArrowButton from "./ArrowButton";
 import "react-multi-carousel/lib/styles.css";
+import CarouselDot from "./CarouselDot";
 
 const responsive = {
   desktop: {
@@ -25,8 +26,8 @@ const CardHeader = styled.div`
   margin-top: -1.25rem;
   margin-right: 4%;
   margin-left: 4%;
-  background: linear-gradient(40deg, #2096ff, #05ffa3) !important;
-  ${"" /* background: linear-gradient(40deg, #2096ff, #05ffa3) !important; */}
+  background-color: #f4778d;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f4778d 100%);
   border-radius: 0.25rem;
   padding: 1.6rem 1rem;
   color: #fff;
@@ -47,6 +48,7 @@ export default function Testimonials({ testimonials }) {
   return (
     <>
       <Carousel
+        customDot={<CarouselDot />}
         arrows
         customLeftArrow={<LeftArrow />}
         customRightArrow={<RightArrow />}
@@ -56,23 +58,24 @@ export default function Testimonials({ testimonials }) {
         responsive={responsive}
         ssr={true}
         infinite={true}
-        //autoPlay={this.props.deviceType !== "mobile" ? true : false}
-        //autoPlay={true}
-        //autoPlaySpeed={1000}
         keyBoardControl={true}
-        //customTransition="all .5"
-        //transitionDuration={500}
         containerClass=" py-5"
         //removeArrowOnDeviceType={["tablet", "mobile"]}
         //deviceType={this.props.deviceType}
-        dotListClass="custom-dot-list-style"
+        //dotListClass="custom-dot-list-style"
+        //customTransition="all .5"
+        //transitionDuration={500}
+        //autoPlay={this.props.deviceType !== "mobile" ? true : false}
+        //autoPlay={true}
+        //autoPlaySpeed={1000}
         minimumTouchDrag={10}
-        itemClass="col-sm-4 p-1">
+        itemClass="col-sm-4 p-1"
+      >
         {testimonials.map((t, index) => {
           return (
             <div key={index} className="card h-100">
               <CardHeader>
-                <h5 className="card-title">{t.name}</h5>
+                <h5 className="card-title font-weight-bold">{t.name}</h5>
               </CardHeader>
               <div className="card-body">
                 <div className="card-text">{t.description}</div>

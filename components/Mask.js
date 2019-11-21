@@ -10,13 +10,10 @@ const Component = styled.div`
   height: 100%;
   overflow: hidden;
   background-attachment: fixed;
-  background: url(https://mdbootstrap.com/wp-content/themes/mdbootstrap4/img/overlays/04.png);
-  ${
-    "" /* background: url(https://mdbootstrap.com/wp-content/themes/mdbootstrap4/img/overlays/02.png); */
-  }
-  ${"" /* background-color: rgba(62, 69, 81, 0.3); */}
-  ${"" /* background: linear-gradient(40deg,#2096ff,#05ffa3) !important; */}
-  background: linear-gradient(rgba(32, 150, 255, 0.33) 0%, rgba(5, 255, 163, 0.33) 100%);
+  background: linear-gradient(
+    rgba(244, 119, 141, 0.85) 1%,
+    rgba(247, 206, 104, 0.1) 100%
+  );
 `;
 
 export default function Mask() {
