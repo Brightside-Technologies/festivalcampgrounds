@@ -2,7 +2,7 @@
 - include all pictures in project
 - include files of dependencies in project
   - included bootstrap css + only needed js UMD
-  - included fontawesome all.js. Can I only include the ones that I need?
+  - included fontawesome all.js. Can I only include the ones that I need? (https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers)
   - jQuery and popper are still included via CDN
 - google analytics
 - create components

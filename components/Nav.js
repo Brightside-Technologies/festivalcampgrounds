@@ -8,7 +8,7 @@ const links = [
   { href: "/about-us", label: "About Us", isDisabled: false },
   { href: "/camps", label: "Camps", isDisabled: false },
   { href: "/info", label: "Info", isDisabled: false },
-  { href: "/contact", label: "Contact", isDisabled: true }
+  { href: "/contact", label: "Contact", isDisabled: false }
 ];
 
 const SocialNavLink = styled.a`
@@ -164,7 +164,7 @@ export default function Nav() {
         rel="noopener"
         href="https://www.instagram.com/festivalcampgrounds/"
       >
-        <i class="fab fa-instagram"></i>
+        <i className="fab fa-instagram"></i>
       </SocialNavLink>
       <SocialNavLink
         className="bg-light text-dark"
@@ -172,7 +172,7 @@ export default function Nav() {
         rel="noopener"
         href="https://www.facebook.com/festivalcampgrounds"
       >
-        <i class="fab fa-facebook-f"></i>
+        <i className="fab fa-facebook-f"></i>
       </SocialNavLink>
       <NavbarBurger
         className="navbar-toggler"
