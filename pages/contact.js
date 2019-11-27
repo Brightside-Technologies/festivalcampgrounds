@@ -15,10 +15,6 @@ const Icon = styled.i`
   }
 `;
 
-const Anchor = styled.a`
-  color: #f4778d;
-`;
-
 const GOOGLE_KEY = "AIzaSyDpJ7uPwarXoVNZU24RDFeb_0CaljT8ms8";
 //const GOOGLE_TOKEN = "65422";
 const RANCHO_51 = {
@@ -82,9 +78,22 @@ export default function ContactPage({ data, metadata }) {
       <section className="">
         <div className="container-fluid px-0">
           <div className="row">
+            <div className="col-md-8 d-flex">
+              <div
+                style={{ minHeight: "calc(100vh - 3.25rem)", width: "100%" }}
+              >
+                <GoogleMap
+                  bootstrapURLKeys={{ key: GOOGLE_KEY }}
+                  defaultCenter={defaultMapProps.center}
+                  defaultZoom={defaultMapProps.zoom}
+                  yesIWantToUseGoogleMapApiInternals
+                  onGoogleApiLoaded={renderMarkers}
+                />
+              </div>
+            </div>
             <div className="col-md-4 px-4 flex-column d-flex">
-              <PageTitle className="pt-3 pb-1">{title}</PageTitle>
-              <div>
+              <PageTitle className="pt-3 pb-1 h3">{title}</PageTitle>
+              <div className="py-2">
                 <div className="d-flex align-items-center mb-3">
                   <Icon className="fas fa-phone" />
                   <a className="text-dark" href="tel:+1-760-578-5944">
@@ -100,9 +109,9 @@ export default function ContactPage({ data, metadata }) {
                     info@festivalcampgrounds.com
                   </a>
                 </div>
-                {camps.map(c => {
+                {camps.map((c, index) => {
                   return (
-                    <div className="d-flex align-items-center mb-3">
+                    <div key={index} className="d-flex align-items-center mb-3">
                       <Icon className="fas fa-map-marker-alt" />
                       <div>
                         <p className="m-0 lead">{c.name}</p>
@@ -119,17 +128,59 @@ export default function ContactPage({ data, metadata }) {
                   );
                 })}
               </div>
-            </div>
-            <div className="col-md-8">
-              <div style={{ height: "calc(100vh - 3.25rem)", width: "100%" }}>
-                <GoogleMap
-                  bootstrapURLKeys={{ key: GOOGLE_KEY }}
-                  defaultCenter={defaultMapProps.center}
-                  defaultZoom={defaultMapProps.zoom}
-                  yesIWantToUseGoogleMapApiInternals
-                  onGoogleApiLoaded={renderMarkers}
-                />
-              </div>
+              <PageTitle className="pt-3 pb-1 h3">Leave a Message</PageTitle>
+              <form className="py-2">
+                <div className="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" className="form-control" id="name" />
+                </div>
+                <div className="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    aria-describedby="emailHelp"
+                  />
+                  {/* <small id="emailHelp" className="form-text text-muted">
+                    We'll never share your email with anyone else.
+                  </small> */}
+                </div>
+                <div className="form-group">
+                  <label for="phone">Phone</label>
+                  <input
+                    type="phone"
+                    className="form-control"
+                    id="phone"
+                    aria-describedby="phoneHelp"
+                  />
+                  {/* <small id="phoneHelp" className="form-text text-muted">
+                    We'll never share your email with anyone else.
+                  </small> */}
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <div className="form-group form-check">
+                  <input
+                    type="checkbox"
+                    className="form-check-input"
+                    id="consent"
+                  />
+                  <label className="form-check-label" for="consent">
+                    I consent to Festival Campgrounds collecting my details
+                    through this form.
+                  </label>
+                </div>
+                <button type="submit" className="btn btn-primary">
+                  Send
+                </button>
+              </form>
             </div>
           </div>
         </div>
