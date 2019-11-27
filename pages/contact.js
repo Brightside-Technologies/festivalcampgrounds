@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import GoogleMap from "google-map-react";
 import { Formik } from "formik";
@@ -78,18 +79,21 @@ export default function ContactPage({ data, metadata }) {
   const { title, description } = metadata;
   const { camps } = data;
 
+  const [status, setStatus] = React.useState(null);
+
   async function handleSubmit(data, formikProps) {
-    const { setSubmitting } = formikProps;
+    const { setSubmitting, resetForm } = formikProps;
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...data })
     })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error));
+      .then(() => setStatus("success"))
+      .catch(() => setStatus("error"));
 
     setSubmitting(false);
+    resetForm();
   }
 
   function renderMarkers(props) {
@@ -110,7 +114,7 @@ export default function ContactPage({ data, metadata }) {
 
   return (
     <Layout title={title} description={description}>
-      <section className="">
+      <section>
         <div className="container-fluid px-0">
           <div className="row">
             <div className="col-md-8 d-flex">
@@ -172,6 +176,24 @@ export default function ContactPage({ data, metadata }) {
                 initialValues={formInitialValues}
                 validationSchema={CONTACT_FORM_VALIDATION}
               />
+              {status === "success" && (
+                <div className="alert alert-success" role="alert">
+                  Your message was sent successfully! You'll hear back from us
+                  soon.
+                </div>
+              )}
+              {status === "error" && (
+                <div className="alert alert-error" role="alert">
+                  Oops! There was an error. Please try again or email us
+                  directly at{" "}
+                  <a
+                    href="mailto:info@festivalcampgrounds.com"
+                    class="alert-link"
+                  >
+                    info@festivalcampgrounds.com
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>

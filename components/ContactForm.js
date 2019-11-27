@@ -8,7 +8,7 @@ export default function ContactForm(props) {
     isSubmitting,
     isValidating,
     isValid,
-    values: { consent }
+    values: { consent, name, email, phone, message }
   } = props;
 
   function onSubmit(e) {
@@ -46,6 +46,7 @@ export default function ContactForm(props) {
           }`}
           id="name"
           name="name"
+          value={name}
         />
         {touched.name && errors.name && (
           <small id="name-error-text" className="form-text invalid-feedback">
@@ -65,6 +66,7 @@ export default function ContactForm(props) {
           }`}
           id="email"
           name="email"
+          value={email}
         />
         {touched.email && errors.email && (
           <small id="email-error-text" className="form-text invalid-feedback">
@@ -84,6 +86,7 @@ export default function ContactForm(props) {
           }`}
           id="phone"
           name="phone"
+          value={phone}
         />
         {touched.phone && errors.phone && (
           <small id="phone-error-text" className="form-text invalid-feedback">
@@ -103,6 +106,7 @@ export default function ContactForm(props) {
           id="message"
           name="message"
           rows="3"
+          value={message}
         />
         {touched.message && errors.message && (
           <small id="message-error-text" className="form-text invalid-feedback">
