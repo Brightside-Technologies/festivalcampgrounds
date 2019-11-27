@@ -1,8 +1,10 @@
-import Link from "next/link";
 import styled from "styled-components";
 import GoogleMap from "google-map-react";
+import { Formik } from "formik";
+import * as Yup from "yup";
 import PageTitle from "../components/PageTitle";
 import Layout from "../containers/Layout";
+import ContactForm from "../components/ContactForm";
 
 const Icon = styled.i`
   height: 1.5rem !important;
@@ -16,7 +18,7 @@ const Icon = styled.i`
 `;
 
 const GOOGLE_KEY = "AIzaSyDpJ7uPwarXoVNZU24RDFeb_0CaljT8ms8";
-//const GOOGLE_TOKEN = "65422";
+
 const RANCHO_51 = {
   lat: 33.678754,
   lng: -116.210684,
@@ -36,6 +38,7 @@ const COACHELLA_FESTIVAL_GROUNDS = {
   label: "C"
 };
 const PINS = [RANCHO_51, RANCHO_ALVARADO, COACHELLA_FESTIVAL_GROUNDS];
+
 const defaultMapProps = {
   center: {
     lat: 33.680541,
@@ -44,14 +47,49 @@ const defaultMapProps = {
   zoom: 14.5
 };
 
+const formInitialValues = {
+  name: "",
+  email: "",
+  phone: "",
+  message: "",
+  consent: false
+};
+
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+const CONTACT_FORM_VALIDATION = Yup.object({
+  name: Yup.string().required("Your name is required"),
+  email: Yup.string()
+    .email("Enter a valid email")
+    .required("Email is required"),
+  phone: Yup.string()
+    .required("Your phone number is required")
+    .matches(phoneRegExp, "Phone number is not valid"),
+  message: Yup.string().required("Your message is required"),
+  consent: Yup.bool().oneOf([true], "Please agree to the terms")
+});
+
 export default function ContactPage({ data, metadata }) {
   const { title, description } = metadata;
   const { camps } = data;
 
+  async function handleSubmit(data, formikProps) {
+    const { setSubmitting } = formikProps;
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...data })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error));
+
+    setSubmitting(false);
+  }
+
   function renderMarkers(props) {
     const { map, maps } = props;
-    let markers = PINS.map(pin => {
-      return new maps.Marker({
+    PINS.forEach(pin => {
+      new maps.Marker({
         position: { lat: pin.lat, lng: pin.lng },
         map,
         title: pin.title,
@@ -60,15 +98,6 @@ export default function ContactPage({ data, metadata }) {
           text: pin.label,
           color: "#fff"
         }
-        // icon: {
-        //   path:
-        //     "M 0,0 C -2,-20 -10,-22 -10,-30 A 10,10 0 1,1 10,-30 C 10,-22 2,-20 0,0 z",
-        //   fillColor: pin.color,
-        //   fillOpacity: 1,
-        //   strokeColor: pin.color,
-        //   strokeWeight: 2,
-        //   scale: 1
-        // }
       });
     });
   }
@@ -91,7 +120,7 @@ export default function ContactPage({ data, metadata }) {
                 />
               </div>
             </div>
-            <form className="col-md-4 px-4 flex-column d-flex">
+            <div className="col-md-4 px-4 flex-column d-flex">
               <PageTitle className="pt-3 pb-1 h3">{title}</PageTitle>
               <div className="py-2">
                 <div className="d-flex align-items-center mb-3">
@@ -129,59 +158,15 @@ export default function ContactPage({ data, metadata }) {
                 })}
               </div>
               <PageTitle className="pt-3 pb-1 h3">Leave a Message</PageTitle>
-              <form className="py-2">
-                <div className="form-group">
-                  <label for="name">Name</label>
-                  <input type="text" className="form-control" id="name" />
-                </div>
-                <div className="form-group">
-                  <label for="email">Email</label>
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="email"
-                    aria-describedby="emailHelp"
-                  />
-                  {/* <small id="emailHelp" className="form-text text-muted">
-                    We'll never share your email with anyone else.
-                  </small> */}
-                </div>
-                <div className="form-group">
-                  <label for="phone">Phone</label>
-                  <input
-                    type="phone"
-                    className="form-control"
-                    id="phone"
-                    aria-describedby="phoneHelp"
-                  />
-                  {/* <small id="phoneHelp" className="form-text text-muted">
-                    We'll never share your email with anyone else.
-                  </small> */}
-                </div>
-                <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea
-                    class="form-control"
-                    id="message"
-                    rows="3"
-                  ></textarea>
-                </div>
-                <div className="form-group form-check">
-                  <input
-                    type="checkbox"
-                    className="form-check-input"
-                    id="consent"
-                  />
-                  <label className="form-check-label" for="consent">
-                    I consent to Festival Campgrounds collecting my details
-                    through this form.
-                  </label>
-                </div>
-                <button type="submit" className="btn btn-primary">
-                  Send
-                </button>
-              </form>
-            </form>
+              <Formik
+                onSubmit={handleSubmit}
+                validateOnBlur
+                isInitialValid={false}
+                render={props => <ContactForm {...props} />}
+                initialValues={formInitialValues}
+                validationSchema={CONTACT_FORM_VALIDATION}
+              />
+            </div>
           </div>
         </div>
       </section>
