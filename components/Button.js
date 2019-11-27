@@ -20,6 +20,10 @@ const Component = styled.a`
     background-color: #e45460;
     background-image: linear-gradient(62deg, #fbab7e 0%, #e45460 100%);
   }
+  &[disabled] {
+    opacity: 0.5;
+    cursor: default;
+  }
 `;
 
 export default function Button({ className, children, ...rest }) {

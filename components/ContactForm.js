@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 export default function ContactForm(props) {
   const {
     handleSubmit,
@@ -143,13 +145,9 @@ export default function ContactForm(props) {
           )}
         </div>
       </div>
-      <button
-        disabled={isSubmitting || isValidating || !isValid}
-        type="submit"
-        className="btn btn-primary"
-      >
+      <Button disabled={isSubmitting || isValidating || !isValid} type="submit">
         Send
-      </button>
+      </Button>
     </form>
   );
 }
