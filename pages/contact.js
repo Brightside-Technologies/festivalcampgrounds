@@ -6,6 +6,12 @@ import PageTitle from "../components/PageTitle";
 import Layout from "../containers/Layout";
 import ContactForm from "../components/ContactForm";
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 const Icon = styled.i`
   height: 1.5rem !important;
   width: 1.5rem !important;
