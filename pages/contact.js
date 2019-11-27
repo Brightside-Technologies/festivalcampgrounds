@@ -91,7 +91,7 @@ export default function ContactPage({ data, metadata }) {
                 />
               </div>
             </div>
-            <div className="col-md-4 px-4 flex-column d-flex">
+            <form className="col-md-4 px-4 flex-column d-flex">
               <PageTitle className="pt-3 pb-1 h3">{title}</PageTitle>
               <div className="py-2">
                 <div className="d-flex align-items-center mb-3">
@@ -181,7 +181,7 @@ export default function ContactPage({ data, metadata }) {
                   Send
                 </button>
               </form>
-            </div>
+            </form>
           </div>
         </div>
       </section>
