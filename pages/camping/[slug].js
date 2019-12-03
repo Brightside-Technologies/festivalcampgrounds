@@ -29,6 +29,7 @@ const HeroBody = styled.div`
 const Title = styled.h1`
   z-index: 1;
   padding-top: 2rem;
+  font-weight: 300;
 `;
 
 const BackButtonWithRef = React.forwardRef(
@@ -81,21 +82,22 @@ export default function CampDetailsPage() {
     campingOptions && (
       <Layout title="" description="">
         <Hero bgImg={camp.image}>
-          <Link href="/camps" passHref>
+          {/* TODO: enable this back button if/when there are multiple camps available again  */}
+          {/* <Link href="/camps" passHref>
             <BackButtonWithRef className="btn btn-sm btn-outline-light">
               <span className="icon">
                 <i className="fas fa-arrow-left" />
               </span>
               <span className="font-weight-bold text-uppercase">Camps</span>
             </BackButtonWithRef>
-          </Link>
+          </Link> */}
           <HeroBody className="container">
             <div className="position-absolute" style={{ zIndex: 5 }}>
-              <Title className="mb-0 display-4 text-white font-weight-bold text-center">
+              <Title className="mb-0 display-4 text-white text-center">
                 {camp.name}
               </Title>
               {camp.subtitle && (
-                <Title className="p-0 m-0 h1 text-light text-center">
+                <Title className="p-0 m-0 h2 text-light text-center">
                   {camp.subtitle}
                 </Title>
               )}
@@ -140,9 +142,12 @@ export default function CampDetailsPage() {
                                 passHref
                               >
                                 <DetailsButtonWithRef>
-                                  Details
+                                  View Details
                                 </DetailsButtonWithRef>
                               </Link>
+                              <Button className="text-white ml-1">
+                                Book Now
+                              </Button>
                             </div>
                           </div>
                         </div>

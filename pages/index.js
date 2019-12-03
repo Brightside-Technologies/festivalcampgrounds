@@ -86,8 +86,12 @@ export default function HomePage({ data, metadata }) {
                     alt={item.title}
                   />
                   <div className="pt-0 pt-sm-5 carousel-caption d-flex flex-column align-items-center">
-                    <h5 className="h1 font-weight-bold">{item.title}</h5>
-                    <p className="h2">{item.subtitle}</p>
+                    <h5 className="h1" style={{ fontWeight: 300 }}>
+                      {item.title}
+                    </h5>
+                    <p className="h2" style={{ fontWeight: 300 }}>
+                      {item.subtitle}
+                    </p>
                   </div>
                   <Mask />
                 </div>

@@ -4,9 +4,9 @@ const StyledHeader = styled.h1`
   margin-bottom: 1.5rem;
 `;
 
-export default function PageTitle({ children, className }) {
+export default function PageTitle({ children, className, style }) {
   return (
-    <StyledHeader className={`font-weight-bold ${className || ""}`}>
+    <StyledHeader className={className} style={style}>
       {children}
     </StyledHeader>
   );

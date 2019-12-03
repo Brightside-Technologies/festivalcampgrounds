@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 const links = [
   { href: "/", label: "Home", isDisabled: false },
   { href: "/about-us", label: "About Us", isDisabled: false },
-  { href: "/camps", label: "Camps", isDisabled: false },
+  { href: "/camping/rancho-51", label: "Camping", isDisabled: false },
   { href: "/info", label: "Info", isDisabled: false },
   { href: "/contact", label: "Contact", isDisabled: false }
 ];

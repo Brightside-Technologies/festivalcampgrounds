@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Component = styled.a`
+  cursor: pointer;
   background-color: #f4778d;
   background-image: linear-gradient(62deg, #fbab7e 0%, #f4778d 100%);
   color: white;

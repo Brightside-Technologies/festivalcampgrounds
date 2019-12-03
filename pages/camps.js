@@ -61,8 +61,8 @@ export default function CampsPage({ data, metadata }) {
                           <div className="d-flex justify-content-start">
                             <Link
                               passHref
-                              href="/camps/[slug]"
-                              as={`/camps/${camp.slug}`}
+                              href="/camping/[slug]"
+                              as={`/camping/${camp.slug}`}
                             >
                               <DetailsButtonWithRef>
                                 Details

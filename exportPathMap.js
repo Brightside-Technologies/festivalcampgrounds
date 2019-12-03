@@ -15,8 +15,8 @@ async function exportPathMap(defaultPathMap, { dev }) {
   const campPaths = camps.reduce((pages, camp) => {
     return {
       ...pages,
-      [`/camps/${camp.slug}`]: {
-        page: "/camps/[slug]",
+      [`/camping/${camp.slug}`]: {
+        page: "/camping/[slug]",
         query: { slug: camp.slug }
       }
     };
@@ -42,10 +42,11 @@ async function exportPathMap(defaultPathMap, { dev }) {
   // filter our dynamic paths from defaulPathMap
   const {
     ["/accommodation/[camp]/[slug]"]: accommodationsDynamicPath,
-    ["/camps/[slug]"]: campsDynamicPath,
+    ["/camping/[slug]"]: campsDynamicPath,
     ...staticPaths
   } = defaultPathMap;
 
+  // TODO: filter out /camps path and Rancho Alvarado paths
   return Object.assign({}, staticPaths, campPaths, campingOptionsPaths);
 }
 

@@ -57,10 +57,15 @@ export default function AboutUsPage({ metadata, data }) {
             className="position-absolute d-flex flex-column align-items-center justify-content-center"
             style={{ zIndex: 10 }}
           >
-            <h1 className="text-center my-5 text-white font-weight-bold">
+            <h1
+              className="text-center my-5 text-white"
+              style={{ fontWeight: 300 }}
+            >
               About Us
             </h1>
-            <h2 className="text-center text-white">{title}</h2>
+            <h2 className="text-center text-white" style={{ fontWeight: 300 }}>
+              {title}
+            </h2>
             <h3 className="text-center text-white h5">{subtitle}</h3>
           </div>
         </HeroBody>

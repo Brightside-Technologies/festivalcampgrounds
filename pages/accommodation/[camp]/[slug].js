@@ -91,7 +91,7 @@ export default function OptionDetailsPage() {
     camp && (
       <Layout title={`${camp.name} | ${campingOption.name}`} description="">
         <Hero bgImg={campingOption.images[0]}>
-          <Link href="/camps/[slug]" as={`/camps/${campSlug}`} passHref>
+          <Link href="/camping/[slug]" as={`/camping/${campSlug}`} passHref>
             <BackButtonWithRef className="btn btn-sm btn-outline-light">
               <span className="icon">
                 <i className="fas fa-arrow-left" />

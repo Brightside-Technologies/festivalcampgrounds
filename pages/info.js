@@ -16,7 +16,9 @@ export default function CampsPage({ data, metadata }) {
     <Layout title={`${title} - Festival Campgrounds`} description={description}>
       <section className="section">
         <div className="container px-0">
-          <PageTitle className="pt-3 pb-1">Terms and Conditions</PageTitle>
+          <PageTitle className="pt-3 pb-1" style={{ fontWeight: 300 }}>
+            Terms and Conditions
+          </PageTitle>
           <ul>
             {terms.map(t => (
               <li>
@@ -28,7 +30,9 @@ export default function CampsPage({ data, metadata }) {
       </section>
       <section className="section">
         <div className="container px-0">
-          <PageTitle className="pt-3 pb-1">FAQ</PageTitle>
+          <PageTitle className="pt-3 pb-1" style={{ fontWeight: 300 }}>
+            FAQ
+          </PageTitle>
           {faq.map(f => {
             return (
               <div className="my-5 shadow-sm border">
