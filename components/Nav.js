@@ -11,6 +11,8 @@ const links = [
   { href: "/contact", label: "Contact", isDisabled: false }
 ];
 
+// TODO: fix glitchy nav when collapsing
+
 const SocialNavLink = styled.a`
   display: flex;
   align-items: center;
@@ -94,9 +96,9 @@ const NavbarBurger = styled.button`
   background-color: transparent;
   border: 0;
   z-index: 1;
-  &:hover {
+  /* &:hover {
     background-color: rgba(0, 0, 0, 0.25);
-  }
+  } */
   &:focus {
     outline: none;
   }
