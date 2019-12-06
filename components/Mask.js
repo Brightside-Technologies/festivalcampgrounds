@@ -11,7 +11,7 @@ const Component = styled.div`
   overflow: hidden;
   background-attachment: fixed;
   background: linear-gradient(
-    rgba(244, 119, 141, 0.85) 1%,
+    rgba(244, 119, 141, 0.5) 1%,
     rgba(247, 206, 104, 0.1) 100%
   );
 `;

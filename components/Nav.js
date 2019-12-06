@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 
-// TODO: remove disabled property
 const links = [
   { href: "/", label: "Home", isDisabled: false },
   { href: "/about-us", label: "About Us", isDisabled: false },
+  { href: "/amenities", label: "Amenities", isDisabled: false },
   { href: "/camping/rancho-51", label: "Camping", isDisabled: false },
   { href: "/info", label: "Info", isDisabled: false },
   { href: "/contact", label: "Contact", isDisabled: false }
@@ -189,29 +189,31 @@ export default function Nav() {
       </NavbarBurger>
       <NavbarCollapse className="collapse navbar-collapse" id="navlinks">
         <ul className="navbar-nav ml-auto h-100">
-          {links.map((link, index) => (
-            <NavItem
-              key={index}
-              className={`nav-item ${
-                link.href === "/"
-                  ? router.pathname === "/"
+          {links.map((link, index) => {
+            return (
+              <NavItem
+                key={index}
+                className={`nav-item ${
+                  link.href === "/"
+                    ? router.asPath === "/"
+                      ? "active"
+                      : ""
+                    : router.asPath.includes(link.href)
                     ? "active"
                     : ""
-                  : router.pathname.includes(link.href)
-                  ? "active"
-                  : ""
-              }`}
-            >
-              <NavLink
-                className={`font-weight-bold text-dark nav-link${
-                  link.isDisabled ? " disabled" : ""
                 }`}
-                href={link.href}
               >
-                {link.label}
-              </NavLink>
-            </NavItem>
-          ))}
+                <NavLink
+                  className={`font-weight-bold text-dark nav-link${
+                    link.isDisabled ? " disabled" : ""
+                  }`}
+                  href={link.href}
+                >
+                  {link.label}
+                </NavLink>
+              </NavItem>
+            );
+          })}
         </ul>
       </NavbarCollapse>
     </Navbar>

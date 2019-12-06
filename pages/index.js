@@ -60,6 +60,7 @@ export default function HomePage({ data, metadata }) {
           id="hero-carousel"
           className="carousel slide"
           data-ride="carousel"
+          data-interval={false}
         >
           <ol className="carousel-indicators">
             {hero_carousel.map((item, index) => {
@@ -81,7 +82,11 @@ export default function HomePage({ data, metadata }) {
                   className={`carousel-item ${index === 0 ? "active" : ""}`}
                 >
                   <img
-                    className="d-block img-fluid"
+                    className="d-block img-fluid w-100"
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: "center"
+                    }}
                     src={item.image}
                     alt={item.title}
                   />
@@ -250,15 +255,17 @@ HomePage.getInitialProps = async () => {
 
   // TODO: define these in json file
   const images = [
-    "https://i1.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/01/19.jpg?fit=1024%2C683&ssl=1",
-    "https://i2.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/01/20-1.jpg?fit=1024%2C683&ssl=1",
-    "https://i1.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/02/site-1.jpg?fit=700%2C525&ssl=1",
-    "https://i2.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/02/site-2.jpg?fit=700%2C525&ssl=1",
-    "https://i2.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/02/site-4.jpg?fit=700%2C525&ssl=1",
-    "https://i2.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/01/35.jpg?ssl=1",
-    "https://i1.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/01/04.jpg?ssl=1",
-    "https://i2.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/02/site-3.jpg?fit=700%2C525&ssl=1",
-    "https://i1.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/01/BYO03.jpg?fit=1024%2C681&ssl=1"
+    "/images/fds-313.jpg",
+    "/images/f-136.jpg",
+    "/images/f-140.jpg",
+    "/images/f-150.jpg",
+    "/images/f-84.jpg",
+    "/images/f-66.jpg",
+    "/images/f-54.jpg",
+    "/images/f-38.jpg",
+    "/images/f-62.jpg",
+    "/images/f-16.jpg",
+    "/images/f-128.jpg"
   ];
 
   // TODO: define in json file
@@ -266,20 +273,17 @@ HomePage.getInitialProps = async () => {
     {
       title: "A Desert Retreat",
       subtitle: "Less than 2 miles from festival grounds",
-      image:
-        "https://i1.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/01/04.jpg?ssl=1"
+      image: "/images/f-54.jpg"
     },
     {
       title: "More than a place to stay",
       subtitle: "A wonderful experience to remember forever",
-      image:
-        "https://i2.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/01/35.jpg?ssl=1"
+      image: "/images/image-08.jpg"
     },
     {
       title: "Camping in style",
       subtitle: "With multiple options to choose, for any needs",
-      image:
-        "https://i1.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/01/19.jpg?ssl=1"
+      image: "/images/f-150.jpg"
     }
   ];
 
