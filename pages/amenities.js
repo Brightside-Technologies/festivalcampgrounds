@@ -1,13 +1,6 @@
-import styled from "styled-components";
 import PageTitle from "../components/PageTitle";
 import Layout from "../containers/Layout";
 import Mask from "../components/Mask";
-
-const Icon = styled.i`
-  height: 36px;
-  width: 36px;
-  margin: 0.5rem;
-`;
 
 export default function AmenitiesPage({ data, metadata }) {
   const { title, description } = metadata;

@@ -8,6 +8,7 @@ const links = [
   { href: "/amenities", label: "Amenities", isDisabled: false },
   { href: "/camping/rancho-51", label: "Camping", isDisabled: false },
   { href: "/info", label: "Info", isDisabled: false },
+  { href: "/gallery", label: "Gallery", isDisabled: false },
   { href: "/contact", label: "Contact", isDisabled: false }
 ];
 
@@ -49,7 +50,7 @@ const NavLink = styled.a`
     color: rgba(0, 0, 0, 0.3) !important;
   }
 
-  @media (min-width: 576px) {
+  @media (min-width: 767px) {
     &::after {
       content: "";
       display: block;
@@ -79,7 +80,7 @@ const NavbarBrand = styled.a`
 const NavbarCollapse = styled.div`
   &.show,
   &.collapsing {
-    @media (max-width: 575px) {
+    @media (max-width: 767px) {
       padding: 0.5rem;
       background-color: white;
       box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
@@ -152,7 +153,7 @@ export default function Nav() {
   }, []);
 
   return (
-    <Navbar className="shadow-sm navbar navbar-light bg-light fixed-top navbar-expand-sm">
+    <Navbar className="shadow-sm navbar navbar-light bg-light fixed-top navbar-expand-md">
       <NavbarBrand className="navbar-brand" href="/">
         <img
           src="/images/logo_black.png"
