@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Layout from "../containers/Layout";
 import Mask from "../components/Mask";
 import ImageReel from "../components/ImageReel";
+import Markdown from "react-markdown";
 
 const Hero = styled.section`
   align-items: stretch;
@@ -46,7 +47,8 @@ export default function AboutUsPage({ metadata, data }) {
     subtitle,
     hero_image,
     amenities,
-    amenities_images
+    amenities_images,
+    content
   } = data;
 
   return (
@@ -73,21 +75,7 @@ export default function AboutUsPage({ metadata, data }) {
       </Hero>
       <section className="section">
         <div className="container px-0">
-          <p className="py-2">
-            With two Ranch’s in the city of Coachella, less than 2 miles away
-            from the festival grounds. Get the Desert life experience under the
-            canopy of the palm trees in our “Pop-Up” Tent Camping Ranch Resort.
-          </p>
-          <p className="py-2">
-            Imagine being in a garden of hundreds of palm trees with unlimited
-            shade and green lush grass. Beautiful Mountain views enjoying nature
-            by sleeping under the palm trees and stars. Your always welcome to
-            relax by dipping in our pool while being surrounded by nature, lay
-            on our hammocks or just hang out on our lounge sitting areas. We
-            also have beauty stations for hair and make up to glam you up and
-            get you ready for the Festivals. We are looking forward to hosting
-            you in one of our two Ranch locations.
-          </p>
+          <Markdown source={content} />
         </div>
       </section>
       <section className="section px-0">

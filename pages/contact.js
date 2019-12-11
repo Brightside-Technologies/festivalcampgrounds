@@ -44,7 +44,7 @@ const COACHELLA_FESTIVAL_GROUNDS = {
   title: "Coachella Fest",
   label: "C"
 };
-const PINS = [RANCHO_51, RANCHO_ALVARADO, COACHELLA_FESTIVAL_GROUNDS];
+const PINS = [RANCHO_51, COACHELLA_FESTIVAL_GROUNDS];
 
 const defaultMapProps = {
   center: {
@@ -212,7 +212,7 @@ ContactPage.getInitialProps = async () => {
 
   return {
     data: {
-      camps: campsData.default
+      camps: campsData.default.filter(c => c.slug !== "rancho-alvarado")
     },
     metadata
   };
