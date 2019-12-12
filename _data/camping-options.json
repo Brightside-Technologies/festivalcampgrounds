@@ -143,7 +143,44 @@
     "details": "# This is a header\n\nAnd this is a paragraph"
   },
   {
-    "name": "BYO Tent",
+    "name": "BYO Tent Grass",
+    "starting_price_per_night": 170,
+    "minimum_stay": 3,
+    "bed_count": 0,
+    "style": "Bring your own tent",
+    "capacity": 2,
+    "max_capacity": 10,
+    "area": 300,
+    "size": "12' x 12'",
+    "guests": "$79 per night (unlimited)",
+    "slug": "byo-tent-grass",
+    "images": ["/images/BYO03.jpg", "/images/BYO01.jpg", "/images/BYO04.jpg"],
+    "amenities": [
+      {
+        "icon": "far fa-eye",
+        "text": "24hr Security/Surveillance"
+      },
+      {
+        "icon": "fas fa-charging-station",
+        "text": "Charging Stations"
+      },
+      {
+        "icon": "fas fa-shower",
+        "text": "Hot/Cold Showers"
+      },
+      {
+        "icon": "fas fa-utensils",
+        "text": "Local Food Trucks"
+      },
+      {
+        "icon": "fas fa-toilet",
+        "text": "Restroom Trailers (Flushable Toilets)"
+      }
+    ],
+    "details": "# This is a header\n\nAnd this is a paragraph"
+  },
+  {
+    "name": "BYO Tent Sand",
     "starting_price_per_night": 120,
     "minimum_stay": 3,
     "bed_count": 0,
@@ -153,8 +190,8 @@
     "area": 300,
     "size": "12' x 12'",
     "guests": "$79 per night (unlimited)",
-    "slug": "byo-tent",
-    "images": ["/images/BYO03.jpg", "/images/BYO01.jpg", "/images/BYO04.jpg"],
+    "slug": "byo-tent-sand",
+    "images": ["/images/byot-sand.jpg"],
     "amenities": [
       {
         "icon": "far fa-eye",

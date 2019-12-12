@@ -5,6 +5,7 @@ import Layout from "../../containers/Layout";
 import Mask from "../../components/Mask";
 import BackButton from "../../components/BackButton";
 import Button from "../../components/Button";
+import {BOOK_NOW_URL} from "../../constants"
 
 const Hero = styled.section`
   align-items: stretch;
@@ -123,7 +124,7 @@ export default function CampDetailsPage() {
                     <div className="card shadow mb-3 rounded-0">
                       <div className="row no-gutters">
                         <div className="col-md-6 col-lg-4 d-flex">
-                          <div className="card-body d-flex flex-column justify-content-between">
+                          <div className="card-body d-flex flex-column justify-content-between" style={{height: "300px"}}>
                             <div>
                               <h4 className="card-title">{option.name}</h4>
                               <h5 className="card-text text-muted">{`From $${option.starting_price_per_night} per night`}</h5>
@@ -145,7 +146,7 @@ export default function CampDetailsPage() {
                                   View Details
                                 </DetailsButtonWithRef>
                               </Link>
-                              <Button className="text-white ml-1">
+                              <Button target="_blanks" href={BOOK_NOW_URL} className="text-white ml-1">
                                 Book Now
                               </Button>
                             </div>
@@ -156,7 +157,7 @@ export default function CampDetailsPage() {
                             src={option.images[0]}
                             className="card-img rounded-0"
                             alt={option.name}
-                            style={{ height: "100%", objectFit: "cover" }}
+                            style={{ maxHeight: "350px", objectFit: "cover" }}
                           />
                         </div>
                       </div>

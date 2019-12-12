@@ -7,6 +7,8 @@ import Mask from "../../../components/Mask";
 import Heading from "../../../components/Heading";
 import ImageReel from "../../../components/ImageReel";
 import BackButton from "../../../components/BackButton";
+import Button from "../../../components/Button";
+import {BOOK_NOW_URL} from "../../../constants"
 
 const Hero = styled.section`
   align-items: stretch;
@@ -127,13 +129,13 @@ export default function OptionDetailsPage() {
                             {`$${campingOption.starting_price_per_night *
                               campingOption.minimum_stay}`}
                           </h4>
-                          <a
-                            href="#"
+                          <Button
+                            href={BOOK_NOW_URL}
+                            target="_blank"
                             role="button"
-                            className="btn btn-primary text-uppercase"
                           >
                             Book Now
-                          </a>
+                          </Button>
                         </div>
                         <div className="pb-3">
                           <Heading className="h6 text-uppercase">

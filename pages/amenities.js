@@ -22,7 +22,7 @@ export default function AmenitiesPage({ data, metadata }) {
                       src={a.images[0]}
                       className="card-img"
                       alt={a.text}
-                      style={{ objectFit: "cover" }}
+                      style={{ objectFit: "cover", height: "100%" }}
                     />
                     <Mask />
                     <div className="card-img-overlay">

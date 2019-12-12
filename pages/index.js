@@ -166,11 +166,11 @@ export default function HomePage({ data, metadata }) {
           <div className="row">
             {camping_options.map((option, index) => {
               return (
-                <div key={index} className="col-sm-3 px-1 my-1">
-                  <div className="border-0 rounded-0 card text-white bg-dark">
+                <div key={index} className="col-md-4 col-lg-3 px-1 my-1">
+                  <div className="border-0 rounded-0 card text-white bg-dark h-100">
                     <img
                       src={option.images[0]}
-                      className="card-img-top rounded-0"
+                      className="card-img-top rounded-0 h-100"
                       alt={option.name}
                     />
                     <div className="card-body">
