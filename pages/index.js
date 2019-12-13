@@ -167,13 +167,17 @@ export default function HomePage({ data, metadata }) {
             {camping_options.map((option, index) => {
               return (
                 <div key={index} className="col-md-4 px-1 my-2">
-                  <div className="border-0 rounded-0 card text-white bg-dark h-100 shadow">
+                  <div
+                    className="border-0 rounded-0 card text-white bg-dark h-100 shadow"
+                    style={{ flex: "1 0 0%" }}
+                  >
                     <img
                       src={option.images[0]}
                       className="card-img-top rounded-0"
                       alt={option.name}
+                      style={{ flex: "1 1 auto" }}
                     />
-                    <div className="card-body">
+                    <div className="card-body" style={{ flex: "1 0 0%" }}>
                       <h5 className="card-title text-center m-0">
                         {option.name}
                       </h5>
@@ -264,7 +268,7 @@ HomePage.getInitialProps = async () => {
     "/images/f-54.jpg",
     "/images/f-38.jpg",
     "/images/f-62.jpg",
-    "/images/f-16.jpg",
+    "/images/f-76.jpg",
     "/images/f-128.jpg"
   ];
 
@@ -278,12 +282,12 @@ HomePage.getInitialProps = async () => {
     {
       title: "More than a place to stay",
       subtitle: "A wonderful experience to remember forever",
-      image: "/images/image-08.jpg"
+      image: "/images/R51-349.jpg"
     },
     {
       title: "Camping in style",
       subtitle: "With multiple options to choose, for any needs",
-      image: "/images/f-150.jpg"
+      image: "/images/f-4.jpg"
     }
   ];
 

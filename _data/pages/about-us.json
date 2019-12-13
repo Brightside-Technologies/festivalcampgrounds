@@ -6,16 +6,16 @@
   "hero_image": "/images/f-62.jpg",
   "images": [
     "/images/superior-tent-02.jpg",
-    "/images/signature-tent-02.jpg",
-    "/images/deluxe-tent-03.jpg",
+    "/images/f-167.jpg",
+    "/images/superior-tent-03.jpg",
     "/images/about-us-01.jpg",
     "/images/about-us-02.jpg",
     "/images/about-us-03.jpg",
     "/images/image-04.jpg",
     "/images/image-05.jpg",
     "/images/image-06.jpg",
-    "/images/image-07.jpg",
-    "/images/image-08.jpg"
+    "/images/f-74.jpg",
+    "/images/f-101.jpg"
   ],
   "title": "Festival Campgrounds Presents",
   "subtitle": "The Coachella Ranch Glamping Experience",
@@ -49,6 +49,10 @@
       "text": "Pool"
     },
     {
+      "icon": "fas fa-hands",
+      "text": "Massage"
+    },
+    {
       "icon": "fas fa-toilet",
       "text": "Restroom Trailers (Flushable Toilets)"
     },
@@ -70,13 +74,18 @@
     }
   ],
   "amenities_images": [
-    "/images/yoga.jpg",
-    "/images/food-truck.jpg",
+    "/images/f-92.jpg",
+    "/images/f-39.jpg",
+    "/images/f-73.jpg",
+    "/images/f-77.jpg",
+    "/images/f-135.jpg",
+    "/images/yoga-02.jpg",
     "/images/image-01.jpg",
-    "/images/helicopter.jpg",
+    "/images/fds-24.jpg",
     "/images/pedego.jpg",
     "/images/image-02.jpg",
-    "/images/image-03.jpg"
+    "/images/R51-208.jpg",
+    "/images/fds-222.jpg"
   ],
   "content": "Hi We are Johnny and Claudia Alvardo, We were raised in The Coachella Valley, Graduated from Indio High school. We both continued our studies in Los Angeles and began our careers in corporate America in our respective fields. Life was great we bought our first home, living life at its fullest. As life kept going, we started our family, and that’s when our life changed!\n\nQuestions arose, newborn baby, corporate America? Work life balance? How is that going to work out. If we were always working, who was going to raise our children, was are main topic of conversation. After countless conversations of what if’s, we realized that one thing was for certain, there is now work life balance in corporate America, and we want to raise our child with family. Knowing what we wanted for our family, we decided to leave our comfortable home and careers. We took the biggest risk of our lives selling everything we had to move back home to the desert\n\nAfter a couple of years in the desert, in our new home and establishing our careers again, things started to get back to normal since we were gone for over 15 years. Things had really changed in our hometown, the city had grown and had lots of new thing to do, Like lots of cool festivals! We enjoyed the various festivals the city put on, but two in particular Coachella and Stagecoach are the flagship of  festivals. After seeing the business opportunities these festivals brought with them, Our entrepreneurial spirits kicked in! We decided to risk it all again, and once again we sold our comfortable home to make the biggest purchase of our life with Rancho51. Our new 8 acre ranch was going to help us capitalize on the festival season, as we now have are very own pop-up glamping resort, for guest to stay with us during the festivals.  We are looking forward to hosting you all!"
 }
