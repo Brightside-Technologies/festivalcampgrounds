@@ -170,7 +170,7 @@ export default function HomePage({ data, metadata }) {
                   <div className="border-0 rounded-0 card text-white bg-dark h-100">
                     <img
                       src={option.images[0]}
-                      className="card-img-top rounded-0 h-100"
+                      className="card-img-top rounded-0"
                       alt={option.name}
                     />
                     <div className="card-body">
