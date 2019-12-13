@@ -132,7 +132,7 @@ export default function HomePage({ data, metadata }) {
       <section className="section">
         <div className="container px-0">
           <div className="row">
-            <div className="col-sm-4">
+            <div className="col-md-4">
               <p className="text-uppercase">The distance</p>
               <h2 className="text-uppercase display-4">
                 Closer than You think
@@ -154,7 +154,7 @@ export default function HomePage({ data, metadata }) {
                 <p className="m-0 h5">45 minutes walking</p>
               </div>
             </div>
-            <div className="col-sm-8">
+            <div className="col-md-8">
               <img src="/images/map.jpg" className="img-fluid" />
             </div>
           </div>
@@ -163,11 +163,11 @@ export default function HomePage({ data, metadata }) {
       <section className="section">
         <div className="container px-0">
           <h2 className="h2 text-uppercase">Camping Options</h2>
-          <div className="row">
+          <div className="row justify-content-center">
             {camping_options.map((option, index) => {
               return (
-                <div key={index} className="col-md-4 col-lg-3 px-1 my-1">
-                  <div className="border-0 rounded-0 card text-white bg-dark h-100">
+                <div key={index} className="col-md-4 px-1 my-2">
+                  <div className="border-0 rounded-0 card text-white bg-dark h-100 shadow">
                     <img
                       src={option.images[0]}
                       className="card-img-top rounded-0"
@@ -178,7 +178,7 @@ export default function HomePage({ data, metadata }) {
                         {option.name}
                       </h5>
                       <div className="d-flex align-items-center justify-content-center">
-                        <span className="h1">{`$${option.starting_price_per_night}`}</span>
+                        <span className="h2">{`$${option.starting_price_per_night}`}</span>
                         &nbsp;
                         <span>per night</span>
                       </div>

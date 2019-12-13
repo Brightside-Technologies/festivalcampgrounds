@@ -1,7 +1,7 @@
 [
   {
-    "name": "Superior Tent",
-    "starting_price_per_night": 399,
+    "name": "Superior Tent 2 BEDS",
+    "starting_price_per_night": 499,
     "minimum_stay": 3,
     "bed_count": 2,
     "style": "Fully Furnished",
@@ -45,8 +45,8 @@
     "details": "# This is a header\n\nAnd this is a paragraph"
   },
   {
-    "name": "Deluxe Tent",
-    "starting_price_per_night": 299,
+    "name": "Deluxe Tent ONE BED",
+    "starting_price_per_night": 349,
     "minimum_stay": 3,
     "bed_count": 1,
     "style": "Fully Furnished",
@@ -57,7 +57,7 @@
     "guests": "$79 per night (unlimited)",
     "slug": "deluxe-tent",
     "images": [
-      "/images/deluxe-tent-01.jpg",
+      "/images/deluxe-tent-04.png",
       "/images/deluxe-tent-02.jpg",
       "/images/deluxe-tent-03.jpg"
     ],
@@ -90,8 +90,8 @@
     "details": "# This is a header\n\nAnd this is a paragraph"
   },
   {
-    "name": "Signature Tent",
-    "starting_price_per_night": 199,
+    "name": "Signature Tent NO BEDS",
+    "starting_price_per_night": 249,
     "minimum_stay": 3,
     "bed_count": 0,
     "style": "Unfurnished",
@@ -143,7 +143,7 @@
     "details": "# This is a header\n\nAnd this is a paragraph"
   },
   {
-    "name": "BYO Tent Grass",
+    "name": "BYO Tent on GRASS",
     "starting_price_per_night": 170,
     "minimum_stay": 3,
     "bed_count": 0,
@@ -180,7 +180,7 @@
     "details": "# This is a header\n\nAnd this is a paragraph"
   },
   {
-    "name": "BYO Tent Sand",
+    "name": "BYO Tent on SAND",
     "starting_price_per_night": 120,
     "minimum_stay": 3,
     "bed_count": 0,
