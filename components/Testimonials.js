@@ -29,12 +29,16 @@ const CardHeader = styled.div`
   background-color: #f4778d;
   background-image: linear-gradient(62deg, #fbab7e 0%, #f4778d 100%);
   border-radius: 0.25rem;
-  padding: 1.6rem 1rem;
+  padding: 1rem;
   color: #fff;
   text-align: center;
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const LeftArrow = ({ onClick }) => (
@@ -75,7 +79,21 @@ export default function Testimonials({ testimonials }) {
           return (
             <div key={index} className="card h-100">
               <CardHeader>
-                <h5 className="card-title font-weight-bold">{t.name}</h5>
+                <h5 className="m-0 pt-4 card-title font-weight-bold">
+                  {t.name}
+                </h5>
+                <p className="m-0">{t.location}</p>
+                <img
+                  className="rounded-circle border"
+                  style={{
+                    width: 64,
+                    height: 64,
+                    position: "absolute",
+                    marginTop: "-1.5rem",
+                    top: 0
+                  }}
+                  src={t.image}
+                />
               </CardHeader>
               <div className="card-body">
                 <div className="card-text">{t.description}</div>

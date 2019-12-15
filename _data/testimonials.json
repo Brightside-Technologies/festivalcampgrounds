@@ -1,32 +1,100 @@
 [
   {
     "name": "Lauren",
+    "location": "Brisbane, Australia",
     "description": "If we could give 10 out of 5 stars we would. Since day one we felt comfortable, safe and had a great time at the Ranch. Everyone was super friendly and helpful and genuinely cared about our wellbeing every night and morning. The beauty bar, ice buckets and 24 hour security were amazing and an added feature we were not even aware was going to happen! We loved every minute and will 150% be back!",
-    "image": "https://i0.wp.com/www.festivalcampgrounds.com/wp-content/uploads/2019/01/home_pic_01.jpg?fit=1140%2C930&ssl=1",
+    "image": "/images/home_pic_01.jpg",
     "featured": true
   },
   {
-    "name": "Julie",
-    "description": "This place was perfect for our weekend camping trip! The grass and shade from the palm trees was great during a hot, dry weekend. The bathrooms were very nice (always clean and stocked with TP and towels) and the access to the ice machine was such a bonus! I also really appreciated having security there at night, the guard was really personable and made me feel totally safe. I’ll definitely be staying here again next year!",
-    "image": "",
+    "name": "Shelby",
+    "location": "Los Angeles, CA",
+    "description": "We stayed during Stagecoach and had an amazing time! The grounds were a desert oasis, the bathrooms and showers were kept clean and were air conditioned, they were always enough charging spaces, the pool was a fantastic touch and the food trucks the had on grounds were AMAZING! We would stay again in a heartbeat! Thank you Claudia and Johnny for being such wonderful and inviting hosts!",
+    "image": "/images/shelby.jpg",
     "featured": false
   },
   {
-    "name": "Silvia",
-    "description": "The place is super amazing, away from all the dirt and dust of coachella. It’s basically glamping and you will love it.",
-    "image": "",
+    "name": "Evelyn",
+    "location": "Baldwin Park, CA",
+    "description": "Stayed here for Stagecoach weekend and it was great. The restrooms and showers were clean all the time. Never had to wait for a shower or any of that. The dj and the pool made the experience much better too. Although I didn’t take advantage of the beauty bar it was a nice touch to help other people get ready for the weekend. Definitely would recommend staying here.",
+    "image": "/images/evelyn.jpg",
     "featured": false
   },
   {
-    "name": "Grace",
-    "description": "Johnny and Claudia are incredible hosts! They go above and beyond to accommodate and make the trip as special and memorable as possible. Stay with them and you’ll see! The camping space is truly a desert oasis, imported with a water fountain and perfect ecosystem of beautiful birds and wildlife. Stay here, you will be refreshed in all aspects!!!",
-    "image": "",
+    "name": "Melissa",
+    "location": "California, USA",
+    "description": "We stayed here during Stagecoach weekend. The hospitality that they showed was so refreshing and really made everyone feel at home. All the amenities and activities they set up made a tent camping experience feel like a glamping experience. Everything they could think of to set up they did. There was a pool, dj, Taco man, glam station, hammocks, games, showers, etc. It was a great place to socialize and make new friends. They even offered shuttles to and from the festival, which was extremely convenient. I honestly could go on and on about how incredible our experience was. I will definitely be staying here again!! Thank you so much Claudia and Johnny ",
+    "image": "/images/melissa.jpg",
     "featured": false
   },
   {
-    "name": "John Doe",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.",
-    "image": "",
+    "name": "Harvey",
+    "location": "Derby, United Kingdom",
+    "description": "Great place, nice and clean, toilets and showers were very good. Good place to meet cool people and have fun!",
+    "image": "/images/harvey.jpg",
+    "featured": false
+  },
+  {
+    "name": "Chau",
+    "location": "Garden Grove, CA",
+    "description": "My friend and I had a such a good time camping for Coachella at Claudia and Johnny's ranch! When we got there Johnny greeted us and showed us around. The bathrooms and showers were nice and private, so that was an extra bonus. They had plenty of outlets for us to charge our phones. They created an oasis for us to hang out at and have a good time. Being at a three day festival is exhausting especially when camping but they made us feel so comfortable! They provided shuttle service too. They took us to the festival at any time and provided a schedule for pick up. They handled that Coachella traffic. Overall, beautiful place and great people!",
+    "image": "/images/chau.jpg",
+    "featured": false
+  },
+  {
+    "name": "Luis",
+    "location": "Dubai, United Arab Emirates",
+    "description": "The place kept clean all the time, lots of space and many facilities. Loved it. I wouldn’t stay anywhere else",
+    "image": "/images/luis.jpg",
+    "featured": false
+  },
+  {
+    "name": "Mariah",
+    "location": "Austin, TX",
+    "description": "10/10. We had such a wonderful experience. Claudia and Johnny are amazing hosts!",
+    "image": "/images/mariah.jpg",
+    "featured": false
+  },
+  {
+    "name": "Eden",
+    "location": "Boise, ID",
+    "description": "Best stay ever! They were so nice and had everything you could ask for. Definitely would stay again!",
+    "image": "/images/eden.jpg",
+    "featured": false
+  },
+  {
+    "name": "Dylan",
+    "location": "Brunswick, ME",
+    "description": "Extremely safe, clean and so friendly!!! I was so glad to have found Claudia & Johnny's place. I wouldn't want to camp anywhere else!",
+    "image": "/images/dylan.jpg",
+    "featured": false
+  },
+  {
+    "name": "Heidi",
+    "location": "San Diego, CA",
+    "description": "We had the most wonderful time and met such great people! Claudia and Johnny really pulled out all the stops--from great showers and toilets, to night-time security, to food trucks, hair, and yoga...I was floored! I was nervous about a campground and pool getting trashed and being impossible to sleep at during Stagecoach, but everyone was SO respectful and kind and the place was impeccably clean. GREAT stay and we'd love to come again next year!",
+    "image": "/images/heidi.jpg",
+    "featured": false
+  },
+  {
+    "name": "Sarah",
+    "location": "Victoria, Australia",
+    "description": "Festival Campgrounds is a beautiful place to stay!! We loved it so much for Coachella. Claudia and Johnny were more than helpful. Everything was so clean and thought of. We would recommend it for everyone!",
+    "image": "/images/sarah.jpg",
+    "featured": false
+  },
+  {
+    "name": "Kelly",
+    "location": "Berlin, Germany",
+    "description": "Claudia & Johnny’s Glamping spot was amazing! It was so much more than I expected. It was exactly as pictured with a lot of thoughtful touches. We loved the complimentary yoga, popsicle stand, tacos, pool, and snack truck. We also really appreciated the clean showers and bathrooms and plenty of spots to get ready for Coachella. Would definitely recommend.",
+    "image": "/images/kelly.jpg",
+    "featured": false
+  },
+  {
+    "name": "Filip",
+    "location": "Nässjö, Sweden",
+    "description": "Perfect place!",
+    "image": "/images/filip.jpg",
     "featured": false
   }
 ]

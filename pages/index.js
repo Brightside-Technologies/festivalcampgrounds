@@ -162,6 +162,17 @@ export default function HomePage({ data, metadata }) {
       </section>
       <section className="section">
         <div className="container px-0">
+          <div className="embed-responsive embed-responsive-16by9">
+            <iframe
+              className="embed-responsive-item"
+              src="https://www.youtube.com/embed/8-7jkW0ReGQ?rel=0"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container px-0">
           <h2 className="h2 text-uppercase">Camping Options</h2>
           <div className="row justify-content-center">
             {camping_options.map((option, index) => {
