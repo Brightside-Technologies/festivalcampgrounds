@@ -1,4 +1,4 @@
-import Button from "./Button";
+import { MyButton } from "./Button";
 
 export default function ContactForm(props) {
   const {
@@ -145,9 +145,12 @@ export default function ContactForm(props) {
           )}
         </div>
       </div>
-      <Button disabled={isSubmitting || isValidating || !isValid} type="submit">
+      <MyButton
+        disabled={isSubmitting || isValidating || !isValid}
+        type="submit"
+      >
         Send
-      </Button>
+      </MyButton>
     </form>
   );
 }

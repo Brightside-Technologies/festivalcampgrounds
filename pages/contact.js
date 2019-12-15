@@ -83,7 +83,6 @@ export default function ContactPage({ data, metadata }) {
 
   async function handleSubmit(data, formikProps) {
     const { setSubmitting, resetForm } = formikProps;
-
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
