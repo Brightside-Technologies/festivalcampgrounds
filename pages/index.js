@@ -167,7 +167,7 @@ export default function HomePage({ data, metadata }) {
               title="Rancho 51"
               className="embed-responsive-item"
               src="https://www.youtube.com/embed/8-7jkW0ReGQ?rel=0"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
         </div>

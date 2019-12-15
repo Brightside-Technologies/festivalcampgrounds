@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const links = [
   { href: "/", label: "Home", isDisabled: false },
@@ -162,6 +163,7 @@ export default function Nav() {
         />
       </NavbarBrand>
       <SocialNavLink
+        aria-label="Instagram link"
         className="bg-light text-dark"
         target="_blank"
         rel="noopener"
@@ -170,6 +172,7 @@ export default function Nav() {
         <i className="fab fa-instagram"></i>
       </SocialNavLink>
       <SocialNavLink
+        aria-label="Facebook link"
         className="bg-light text-dark"
         target="_blank"
         rel="noopener"
@@ -206,14 +209,15 @@ export default function Nav() {
                     : ""
                 }`}
               >
-                <NavLink
-                  className={`font-weight-bold text-dark nav-link${
-                    link.isDisabled ? " disabled" : ""
-                  }`}
-                  href={link.href}
-                >
-                  {link.label}
-                </NavLink>
+                <Link href={link.href} passHref>
+                  <NavLink
+                    className={`font-weight-bold text-dark nav-link${
+                      link.isDisabled ? " disabled" : ""
+                    }`}
+                  >
+                    {link.label}
+                  </NavLink>
+                </Link>
               </NavItem>
             );
           })}

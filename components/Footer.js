@@ -34,6 +34,7 @@ export default function Footer() {
         <Heading>Say Hello</Heading>
         <div className="d-flex">
           <SocialNavLink
+            aria-label="Instagram link"
             className="bg-light text-dark"
             target="_blank"
             rel="noopener"
@@ -42,6 +43,7 @@ export default function Footer() {
             <i className="fab fa-instagram"></i>
           </SocialNavLink>
           <SocialNavLink
+            aria-label="Facebook link"
             className="bg-light text-dark"
             target="_blank"
             rel="noopener"
