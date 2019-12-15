@@ -59,6 +59,7 @@ export default function Footer() {
           className="font-weight-bold text-white"
           href="https://www.brightsidetech.io"
           target="_blank"
+          rel="noopener"
         >
           Brightside Tech
         </a>

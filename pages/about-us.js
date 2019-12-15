@@ -76,6 +76,7 @@ export default function AboutUsPage({ metadata, data }) {
       <section className="section">
         <div className="container px-0">
           <img
+            alt="Juan and Claudia"
             src="/images/j&c.jpg"
             style={{ float: "left", maxWidth: "200px", margin: "1rem" }}
           />

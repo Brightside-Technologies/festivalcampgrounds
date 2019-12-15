@@ -92,6 +92,7 @@ export default function Testimonials({ testimonials }) {
                     marginTop: "-1.5rem",
                     top: 0
                   }}
+                  alt={t.name}
                   src={t.image}
                 />
               </CardHeader>

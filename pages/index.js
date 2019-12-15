@@ -155,7 +155,7 @@ export default function HomePage({ data, metadata }) {
               </div>
             </div>
             <div className="col-md-8">
-              <img src="/images/map.jpg" className="img-fluid" />
+              <img src="/images/map.jpg" className="img-fluid" alt="Map" />
             </div>
           </div>
         </div>
@@ -164,6 +164,7 @@ export default function HomePage({ data, metadata }) {
         <div className="container px-0">
           <div className="embed-responsive embed-responsive-16by9">
             <iframe
+              title="Rancho 51"
               className="embed-responsive-item"
               src="https://www.youtube.com/embed/8-7jkW0ReGQ?rel=0"
               allowfullscreen
@@ -221,7 +222,11 @@ export default function HomePage({ data, metadata }) {
               <p className="lead">&ndash; &nbsp;{featuredTestimonial.name}</p>
             </div>
             <div className="col-sm-7">
-              <img src={featuredTestimonial.image} className="img-fluid" />
+              <img
+                src={featuredTestimonial.image}
+                className="img-fluid"
+                alt="Featured Testimonial"
+              />
             </div>
           </div>
           <div className="row">

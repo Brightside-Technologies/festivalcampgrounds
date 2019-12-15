@@ -45,7 +45,11 @@ const StyledButton = styled.button`
 
 export default function ArrowButton({ variant, onClick }) {
   return (
-    <StyledButton className={`${variant}-arrow`} onClick={onClick}>
+    <StyledButton
+      aria-label="Carousel button"
+      className={`${variant}-arrow`}
+      onClick={onClick}
+    >
       <i className={`fas fa-chevron-${variant}`} />
     </StyledButton>
   );

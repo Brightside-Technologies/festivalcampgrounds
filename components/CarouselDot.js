@@ -34,7 +34,11 @@ const Item = styled.li`
 export default function CarouselDot({ onClick, active, index, carouselState }) {
   return (
     <Item>
-      <Button isActive={active} onClick={onClick}></Button>
+      <Button
+        aria-label="Carousel Dot"
+        isActive={active}
+        onClick={onClick}
+      ></Button>
     </Item>
   );
 }

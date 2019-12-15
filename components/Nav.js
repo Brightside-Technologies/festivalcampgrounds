@@ -158,7 +158,7 @@ export default function Nav() {
         <img
           src="/images/logo_black.png"
           className="d-inline-block align-top"
-          alt=""
+          alt="Logo"
         />
       </NavbarBrand>
       <SocialNavLink
