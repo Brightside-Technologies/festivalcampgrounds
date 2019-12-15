@@ -10,9 +10,11 @@ async function exportPathMap(defaultPathMap, { dev }) {
 
   const [camps, options] = await Promise.all(promises);
 
-  const campSlugs = camps.map(item => item.slug);
+  const filteredCamps = camps.filter(c => c.name === "Rancho 51");
 
-  const campPaths = camps.reduce((pages, camp) => {
+  const campSlugs = filteredCamps.map(item => item.slug);
+
+  const campPaths = filteredCamps.reduce((pages, camp) => {
     return {
       ...pages,
       [`/camping/${camp.slug}`]: {
@@ -46,7 +48,6 @@ async function exportPathMap(defaultPathMap, { dev }) {
     ...staticPaths
   } = defaultPathMap;
 
-  // TODO: filter out /camps path and Rancho Alvarado paths
   return Object.assign({}, staticPaths, campPaths, campingOptionsPaths);
 }
 
