@@ -1,7 +1,7 @@
 import React from "react";
 import NextHead from "next/head";
 
-const defaultOGImage = "./static/thumbnail.png";
+const defaultOGImage = "/images/thumbnail.png";
 
 //TODO: can we compute page url here?
 
