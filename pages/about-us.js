@@ -115,9 +115,9 @@ export default function AboutUsPage({ metadata, data }) {
                 To book your hair & makeup email us to &nbsp;
                 <a
                   className="text-dark font-weight-bold"
-                  href="mailto:info@festivalcampgrounds.com"
+                  href="mailto:rancho51inc@gmail.com"
                 >
-                  info@festivalcampgrounds.com
+                  rancho51inc@gmail.com
                 </a>
               </Alert>
             </div>

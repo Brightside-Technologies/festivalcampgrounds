@@ -131,6 +131,18 @@ export default function HomePage({ data, metadata }) {
       </Hero>
       <section className="section">
         <div className="container px-0">
+          <div className="embed-responsive embed-responsive-16by9">
+            <iframe
+              title="Rancho 51"
+              className="embed-responsive-item"
+              src="https://www.youtube.com/embed/8-7jkW0ReGQ?rel=0"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container px-0">
           <div className="row">
             <div className="col-md-4">
               <p className="text-uppercase">The distance</p>
@@ -157,18 +169,6 @@ export default function HomePage({ data, metadata }) {
             <div className="col-md-8">
               <img src="/images/map.jpg" className="img-fluid" alt="Map" />
             </div>
-          </div>
-        </div>
-      </section>
-      <section className="section">
-        <div className="container px-0">
-          <div className="embed-responsive embed-responsive-16by9">
-            <iframe
-              title="Rancho 51"
-              className="embed-responsive-item"
-              src="https://www.youtube.com/embed/8-7jkW0ReGQ?rel=0"
-              allowFullScreen
-            ></iframe>
           </div>
         </div>
       </section>
