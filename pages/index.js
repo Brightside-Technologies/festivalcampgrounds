@@ -61,7 +61,6 @@ export default function HomePage({ data, metadata }) {
           id="hero-carousel"
           className="carousel slide"
           data-ride="carousel"
-          data-interval={false}
         >
           <ol className="carousel-indicators">
             {hero_carousel.map((item, index) => {
