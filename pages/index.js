@@ -15,6 +15,7 @@ const Hero = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: calc(100vh - 3.25rem);
   ${"" /* max-height: calc(100vh - 3.25rem); */}
 `;
 
@@ -85,12 +86,13 @@ export default function HomePage({ data, metadata }) {
                     className="d-block img-fluid w-100"
                     style={{
                       objectFit: "cover",
-                      objectPosition: "center"
+                      objectPosition: "center",
+                      height: "calc(100vh - 3.25rem)"
                     }}
                     src={item.image}
                     alt={item.title}
                   />
-                  <div className="pt-0 pt-sm-5 carousel-caption d-flex flex-column align-items-center">
+                  <div className="pt-5 carousel-caption d-flex flex-column align-items-center">
                     <h5 className="h1" style={{ fontWeight: 300 }}>
                       {item.title}
                     </h5>
