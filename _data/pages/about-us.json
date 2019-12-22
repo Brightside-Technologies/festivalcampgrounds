@@ -7,14 +7,14 @@
   "images": [
     "/images/superior-tent-02.jpg",
     "/images/superior-tent-03.jpg",
-    "/images/about-us-01.jpg",
-    "/images/about-us-02.jpg",
     "/images/R51-341.jpg",
-    "/images/image-04.jpg",
-    "/images/image-05.jpg",
-    "/images/image-06.jpg",
     "/images/f-74.jpg",
-    "/images/f-101.jpg"
+    "/images/f-101.jpg",
+    "/images/R51-387.jpg",
+    "/images/image-10.jpg",
+    "/images/image-11.jpg",
+    "/images/image-12.jpg",
+    "/images/R51-45.jpg"
   ],
   "title": "Festival Campgrounds Presents",
   "subtitle": "The Coachella Ranch Glamping Experience",
@@ -66,10 +66,6 @@
     {
       "icon": "fas fa-map-marker-alt",
       "text": "Location!!! Les than 2 miles from festival grounds"
-    },
-    {
-      "icon": "fas fa-bicycle",
-      "text": "Electric Bike Rental by Pedego"
     }
   ],
   "amenities_images": [
@@ -79,10 +75,7 @@
     "/images/f-77.jpg",
     "/images/f-135.jpg",
     "/images/yoga-02.jpg",
-    "/images/image-01.jpg",
     "/images/fds-24.jpg",
-    "/images/pedego.jpg",
-    "/images/image-02.jpg",
     "/images/R51-208.jpg",
     "/images/fds-222.jpg"
   ],

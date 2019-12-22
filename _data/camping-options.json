@@ -1,7 +1,7 @@
 [
   {
     "name": "Superior Tent 2 BEDS",
-    "starting_price_per_night": 499,
+    "starting_price_per_night": 449,
     "minimum_stay": 3,
     "bed_count": 2,
     "style": "Fully Furnished",
@@ -56,11 +56,7 @@
     "size": "16' x 16'",
     "guests": "$79 per night (unlimited)",
     "slug": "deluxe-tent",
-    "images": [
-      "/images/deluxe-tent-04.png",
-      "/images/deluxe-tent-02.jpg",
-      "/images/deluxe-tent-03.jpg"
-    ],
+    "images": ["/images/deluxe-tent-04.png", "/images/deluxe-tent-02.jpg"],
     "amenities": [
       {
         "icon": "fas fa-star",
