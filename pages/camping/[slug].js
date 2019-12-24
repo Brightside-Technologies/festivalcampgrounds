@@ -133,7 +133,7 @@ export default function CampDetailsPage() {
                                 <p>Style: {option.style}</p>
                                 <p>Capacity: {`${option.capacity} people`}</p>
                                 <p>Size: {option.size}</p>
-                                <p>Guests: {option.guests}</p>
+                                <p>Additional Guests: {option.guests}</p>
                               </div>
                             </div>
                             <div className="d-flex justify-content-start">
