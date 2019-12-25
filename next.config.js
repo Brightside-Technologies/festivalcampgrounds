@@ -7,18 +7,3 @@ module.exports = withCSS({
   },
   exportPathMap
 });
-
-// module.exports = withCSS({
-//   webpack: config => {
-//     config.plugins.push(
-//       new webpack.ProvidePlugin({
-//         $: "jquery",
-//         jQuery: "jquery"
-//       })
-//     );
-//     return config;
-//   },
-//   cssLoaderOptions: {
-//     url: false
-//   }
-// });

@@ -3,3 +3,7 @@
     command = "npm run export"
 [context.development]
     environment = { NODE_ENV = "development",  GA_ID = "0" }
+[[redirects]]
+    from = "https://festivalcampgrounds.netlify.com/*"
+    to = "https://festivalcampgrounds.com/:splat"
+    status = 301
