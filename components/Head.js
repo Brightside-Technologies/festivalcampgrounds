@@ -9,6 +9,10 @@ const Head = ({ description, title, url }) => (
   <NextHead>
     <meta charSet="UTF-8" />
     <title>{title}</title>
+    <meta
+      name="google-site-verification"
+      content="6COzxjGMpc3ctc0Bgc5RJ64INZvcxM4h7gC6ihQg5Wg"
+    />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {/* <link rel="icon" sizes="192x192" href="/static/touch-icon.png" />
