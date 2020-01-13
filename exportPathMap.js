@@ -41,14 +41,20 @@ async function exportPathMap(defaultPathMap, { dev }) {
     };
   }, {});
 
-  // filter our dynamic paths from defaulPathMap
+  // filter our dynamic paths from defaultPathMap
   const {
     ["/accommodation/[camp]/[slug]"]: accommodationsDynamicPath,
     ["/camping/[slug]"]: campsDynamicPath,
     ...staticPaths
   } = defaultPathMap;
 
-  return Object.assign({}, staticPaths, campPaths, campingOptionsPaths);
+  return Object.assign(
+    {},
+    //{ "/": { page: "/" } },
+    staticPaths,
+    campPaths,
+    campingOptionsPaths
+  );
 }
 
 module.exports = exportPathMap;
