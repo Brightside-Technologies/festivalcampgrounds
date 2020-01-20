@@ -55,28 +55,30 @@ const DetailsButtonWithRef = React.forwardRef(
 
 export default function CampDetailsPage() {
   const router = useRouter();
+  const { slug } = router.query;
   const [camp, setCamp] = React.useState(null);
   const [campingOptions, setCampingOptions] = React.useState(null);
 
   React.useEffect(() => {
     async function getData() {
-      const { slug } = router.query;
-      const data = await import("../../_data/camps.json");
-      const camp = data.default.filter(items => items.slug === slug)[0];
-      setCamp(camp);
-      const campingOptionsData = await import(
-        "../../_data/camping-options.json"
-      );
-      let options = campingOptionsData.default;
-      const mergedOptions = camp.options.map(item => {
-        const slug = Object.keys(item)[0];
-        const option = options.filter(o => o.slug === slug)[0];
-        return { ...option, ...item[slug] };
-      });
-      setCampingOptions(mergedOptions);
+      if (slug) {
+        const data = await import("../../_data/camps.json");
+        const camp = data.default.filter(items => items.slug === slug)[0];
+        setCamp(camp);
+        const campingOptionsData = await import(
+          "../../_data/camping-options.json"
+        );
+        let options = campingOptionsData.default;
+        const mergedOptions = camp.options.map(item => {
+          const slug = Object.keys(item)[0];
+          const option = options.filter(o => o.slug === slug)[0];
+          return { ...option, ...item[slug] };
+        });
+        setCampingOptions(mergedOptions);
+      }
     }
     getData();
-  }, []);
+  }, [slug]);
 
   return (
     camp &&
