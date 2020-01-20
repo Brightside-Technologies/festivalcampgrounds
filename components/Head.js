@@ -28,6 +28,21 @@ const Head = ({ description, title, url }) => (
     <meta property="og:image" content={defaultOGImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-156449586-1"
+    ></script>
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-156449586-1');
+    `
+      }}
+    ></script>
   </NextHead>
 );
 
