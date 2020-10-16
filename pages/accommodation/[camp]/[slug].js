@@ -62,6 +62,7 @@ export default function OptionDetailsPage() {
 
   React.useEffect(() => {
     async function getData() {
+      if(slug && campSlug){
       const campingOptionsDataAsync = import(
         "../../../_data/camping-options.json"
       );
@@ -69,6 +70,10 @@ export default function OptionDetailsPage() {
 
       const campingOptionsData = await campingOptionsDataAsync;
       const campsData = await campsDataAsync;
+
+      console.log("campSlug", campSlug)
+
+      console.log(campsData.default)
 
       const camp = campsData.default.filter(
         items => items.slug === campSlug
@@ -84,9 +89,10 @@ export default function OptionDetailsPage() {
       )[0];
 
       setCampingOption({ ...option, ...campOptionOverrideProps });
+      }
     }
     getData();
-  }, []);
+  }, [slug, campSlug]);
 
   return (
     campingOption &&
