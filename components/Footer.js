@@ -54,16 +54,14 @@ export default function Footer() {
         </div>
       </div>
       <hr />
-      <p className="m-0">Made with &#10084; in the Coachella Valley</p>
       <small>
-        By{" "}
         <a
           className="font-weight-bold text-white"
-          href="https://www.brightsidetech.io"
+          href="https://godiego.me"
           target="_blank"
           rel="noopener"
         >
-          Brightside Tech
+          Made with ❤️ by Diego Bernal
         </a>
       </small>
     </StyledFooter>
