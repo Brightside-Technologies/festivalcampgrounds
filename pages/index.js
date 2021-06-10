@@ -35,8 +35,10 @@ const Carousel = styled.div`
   .carousel-caption {
     top: 0;
     bottom: 0;
-    ${"" /* padding-top: 5rem;
-    padding-bottom: 5rem; */}
+    ${
+      "" /* padding-top: 5rem;
+    padding-bottom: 5rem; */
+    }
   }
 `;
 
@@ -44,7 +46,7 @@ export default function HomePage({ data, metadata }) {
   const { title, description } = metadata;
   const { camping_options, testimonials, images, hero_carousel } = data;
 
-  const featuredTestimonial = testimonials.filter(t => t.featured)[0];
+  const featuredTestimonial = testimonials.filter((t) => t.featured)[0];
 
   React.useEffect(() => {
     async function init() {
@@ -134,6 +136,18 @@ export default function HomePage({ data, metadata }) {
         <div className="container px-0">
           <div className="embed-responsive embed-responsive-16by9">
             <iframe
+              title="The Oasis Rancho 51 Date Garden"
+              className="embed-responsive-item"
+              src="https://www.youtube.com/embed/juIMFmirXDU?rel=0"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container px-0">
+          <div className="embed-responsive embed-responsive-16by9">
+            <iframe
               title="Rancho 51"
               className="embed-responsive-item"
               src="https://www.youtube.com/embed/8-7jkW0ReGQ?rel=0"
@@ -194,11 +208,6 @@ export default function HomePage({ data, metadata }) {
                       <h5 className="card-title text-center m-0">
                         {option.name}
                       </h5>
-                      <div className="d-flex align-items-center justify-content-center">
-                        <span className="h2">{`$${option.starting_price_per_night}`}</span>
-                        &nbsp;
-                        <span>per night</span>
-                      </div>
                       <p className="card-text text-center">{option.style}</p>
                     </div>
                   </div>
@@ -233,7 +242,7 @@ export default function HomePage({ data, metadata }) {
           <div className="row">
             <div className="col-sm-12 p-0">
               <Testimonials
-                testimonials={testimonials.filter(t => !t.featured)}
+                testimonials={testimonials.filter((t) => !t.featured)}
               />
             </div>
           </div>
@@ -268,25 +277,33 @@ HomePage.getInitialProps = async () => {
   const campingOptionsAsync = import("../_data/camping-options.json");
   const testimonialsAsync = import("../_data/testimonials.json");
 
-  const promises = [campingOptionsAsync, testimonialsAsync].map(p =>
-    p.then(res => res.default)
+  const promises = [campingOptionsAsync, testimonialsAsync].map((p) =>
+    p.then((res) => res.default)
   );
 
   const [camping_options, testimonials] = await Promise.all(promises);
 
   // TODO: define these in json file
   const images = [
-    "/images/fds-313.jpg",
+    "/images/new-pool-7.jpg",
+    "/images/new-pool-9.jpg",
     "/images/f-136.jpg",
+    "/images/new-pool-2.jpg",
     "/images/f-140.jpg",
-    "/images/f-150.jpg",
+    "/images/new-pool-3.jpg",
     "/images/f-84.jpg",
     "/images/f-66.jpg",
+    "/images/new-pool-4.jpg",
     "/images/f-54.jpg",
+    "/images/new-pool-8.jpg",
+    "/images/new-pool-1.jpg",
     "/images/f-38.jpg",
+    "/images/new-pool-5.jpg",
     "/images/f-62.jpg",
     "/images/f-76.jpg",
-    "/images/f-128.jpg"
+    "/images/new-pool-6.jpg",
+    "/images/f-128.jpg",
+    "/images/fds-313.jpg",
   ];
 
   // TODO: define in json file
