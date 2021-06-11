@@ -8,7 +8,7 @@ import Heading from "../../../components/Heading";
 import ImageReel from "../../../components/ImageReel";
 import BackButton from "../../../components/BackButton";
 import Button from "../../../components/Button";
-import {BOOK_NOW_URL} from "../../../constants"
+import { BOOK_NOW_URL } from "../../../constants";
 
 const Hero = styled.section`
   align-items: stretch;
@@ -16,7 +16,7 @@ const Hero = styled.section`
   flex-direction: column;
   justify-content: space-between;
   height: 75vh;
-  background: ${props => `url(${props.bgImg})`};
+  background: ${(props) => `url(${props.bgImg})`};
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -62,33 +62,29 @@ export default function OptionDetailsPage() {
 
   React.useEffect(() => {
     async function getData() {
-      if(slug && campSlug){
-      const campingOptionsDataAsync = import(
-        "../../../_data/camping-options.json"
-      );
-      const campsDataAsync = import("../../../_data/camps.json");
+      if (slug && campSlug) {
+        const campingOptionsDataAsync = import(
+          "../../../_data/camping-options.json"
+        );
+        const campsDataAsync = import("../../../_data/camps.json");
 
-      const campingOptionsData = await campingOptionsDataAsync;
-      const campsData = await campsDataAsync;
+        const campingOptionsData = await campingOptionsDataAsync;
+        const campsData = await campsDataAsync;
 
-      console.log("campSlug", campSlug)
+        const camp = campsData.default.filter(
+          (items) => items.slug === campSlug
+        )[0];
+        setCamp(camp);
 
-      console.log(campsData.default)
+        const campOptionOverrideProps = camp.options.filter(
+          (item) => Object.keys(item)[0] === slug
+        )[0][slug];
 
-      const camp = campsData.default.filter(
-        items => items.slug === campSlug
-      )[0];
-      setCamp(camp);
+        const option = campingOptionsData.default.filter(
+          (items) => items.slug === slug
+        )[0];
 
-      const campOptionOverrideProps = camp.options.filter(
-        item => Object.keys(item)[0] === slug
-      )[0][slug];
-
-      const option = campingOptionsData.default.filter(
-        items => items.slug === slug
-      )[0];
-
-      setCampingOption({ ...option, ...campOptionOverrideProps });
+        setCampingOption({ ...option, ...campOptionOverrideProps });
       }
     }
     getData();
@@ -130,11 +126,9 @@ export default function OptionDetailsPage() {
                       </div>
                       <div className="col-md-4">
                         <div className="pb-5">
-                          <Heading className="text-uppercase m-0">From</Heading>
-                          <h4 className="display-4">
-                            {`$${campingOption.starting_price_per_night *
-                              campingOption.minimum_stay}`}
-                          </h4>
+                          <Heading className="text-uppercase m-0 pb-3">
+                            Book for pricing details
+                          </Heading>
                           <Button
                             href={BOOK_NOW_URL}
                             target="_blank"

@@ -129,7 +129,7 @@ export default function CampDetailsPage() {
                           <div className="card-body d-flex flex-column justify-content-between">
                             <div>
                               <h4 className="card-title">{option.name}</h4>
-                              <h5 className="card-text text-muted">{`From $${option.starting_price_per_night} per night`}</h5>
+                              <h5 className="card-text text-muted h6 text-uppercase"><small>Book now for pricing details</small></h5>
                               <div className="pt-3">
                                 <p>Bed(s): {option.bed_count}</p>
                                 <p>Style: {option.style}</p>
