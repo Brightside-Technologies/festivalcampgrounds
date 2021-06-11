@@ -93,15 +93,15 @@ export default function HomePage({ data, metadata }) {
                     src={item.image}
                     alt={item.title}
                   />
-                  {item.title && item.subtitle && (
+                  {(item.title || item.subtitle) && (
                     <div className="pt-5 carousel-caption d-flex flex-column align-items-center">
                       {item.title && (
-                        <h5 className="h1" style={{ fontWeight: 300 }}>
+                        <h5 className="h1 text-white" style={{ fontWeight: 400 }}>
                           {item.title}
                         </h5>
                       )}
                       {item.subtitle && (
-                        <p className="h2" style={{ fontWeight: 300 }}>
+                        <p className="h3 text-white" style={{ fontWeight: 400 }}>
                           {item.subtitle}
                         </p>
                       )}
@@ -315,11 +315,12 @@ HomePage.getInitialProps = async () => {
   // TODO: define in json file
   const hero_carousel = [
     {
+      title: "The Oasis",
+      subtitle: "Less than 2 miles from festival grounds",
       image: "/images/new-pool-5.jpg"
     },
     {
       title: "A Desert Retreat",
-      subtitle: "Less than 2 miles from festival grounds",
       image: "/images/f-54.jpg"
     },
     {
