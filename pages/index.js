@@ -96,12 +96,33 @@ export default function HomePage({ data, metadata }) {
                   {(item.title || item.subtitle) && (
                     <div className="pt-5 carousel-caption d-flex flex-column align-items-center">
                       {item.title && (
-                        <h5 className="h1 text-white" style={{ fontWeight: 400 }}>
+                        <h5
+                          className="h1 text-white"
+                          style={{
+                            fontWeight: 700,
+                            textStroke: "1px black",
+                            // color: "#ff0083 ",
+                            textShadow: `2px 2px 0 #000,
+                            -1px -1px 0 #000,  
+                             1px -1px 0 #000,
+                             -1px 1px 0 #000,
+                              1px 1px 0 #000`
+                          }}
+                        >
                           {item.title}
                         </h5>
                       )}
                       {item.subtitle && (
-                        <p className="h3 text-white" style={{ fontWeight: 400 }}>
+                        <p
+                          className="h3 text-white"
+                          style={{ fontWeight: 400, textStroke: "1px black",
+                          // color: white;
+                          textShadow: `2px 2px 0 #000,
+                          -1px -1px 0 #000,  
+                           1px -1px 0 #000,
+                           -1px 1px 0 #000,
+                            1px 1px 0 #000` }}
+                        >
                           {item.subtitle}
                         </p>
                       )}
@@ -138,6 +159,18 @@ export default function HomePage({ data, metadata }) {
           </a>
         </Carousel>
       </Hero>
+      <section className="section">
+        <div className="container px-0">
+          <div className="embed-responsive embed-responsive-16by9">
+            <iframe
+              title="Pure Concert @ The Oasis Rancho 51 Date Garden"
+              className="embed-responsive-item"
+              src="https://www.youtube.com/embed/WUVJh6tKQAQ?rel=0"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
       <section className="section">
         <div className="container px-0">
           <div className="embed-responsive embed-responsive-16by9">
@@ -315,7 +348,7 @@ HomePage.getInitialProps = async () => {
   // TODO: define in json file
   const hero_carousel = [
     {
-      title: "The Oasis",
+      title: "Rancho 51 Festival Campgrounds",
       subtitle: "Less than 2 miles from festival grounds",
       image: "/images/new-pool-5.jpg"
     },
