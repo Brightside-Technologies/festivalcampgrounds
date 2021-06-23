@@ -163,18 +163,6 @@ export default function HomePage({ data, metadata }) {
         <div className="container px-0">
           <div className="embed-responsive embed-responsive-16by9">
             <iframe
-              title="Pure Concert @ The Oasis Rancho 51 Date Garden"
-              className="embed-responsive-item"
-              src="https://www.youtube.com/embed/WUVJh6tKQAQ?rel=0"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      </section>
-      <section className="section">
-        <div className="container px-0">
-          <div className="embed-responsive embed-responsive-16by9">
-            <iframe
               title="The Oasis Rancho 51 Date Garden"
               className="embed-responsive-item"
               src="https://www.youtube.com/embed/juIMFmirXDU?rel=0"
