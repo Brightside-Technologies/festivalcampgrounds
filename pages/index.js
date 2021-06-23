@@ -100,13 +100,13 @@ export default function HomePage({ data, metadata }) {
                           className="h1 text-white"
                           style={{
                             fontWeight: 700,
-                            textStroke: "1px black",
+                            textStroke: "1px #f4778d",
                             // color: "#ff0083 ",
-                            textShadow: `2px 2px 0 #000,
-                            -1px -1px 0 #000,  
-                             1px -1px 0 #000,
-                             -1px 1px 0 #000,
-                              1px 1px 0 #000`
+                            textShadow: `2px 2px 0 #f4778d ,
+                            -1px -1px 0 #f4778d ,  
+                             1px -1px 0 #f4778d ,
+                             -1px 1px 0 #f4778d ,
+                              1px 1px 0 #f4778d `
                           }}
                         >
                           {item.title}
@@ -115,13 +115,13 @@ export default function HomePage({ data, metadata }) {
                       {item.subtitle && (
                         <p
                           className="h3 text-white"
-                          style={{ fontWeight: 400, textStroke: "1px black",
+                          style={{ fontWeight: 400, textStroke: "1px #f4778d ",
                           // color: white;
-                          textShadow: `2px 2px 0 #000,
-                          -1px -1px 0 #000,  
-                           1px -1px 0 #000,
-                           -1px 1px 0 #000,
-                            1px 1px 0 #000` }}
+                          textShadow: `2px 2px 0 #f4778d ,
+                          -1px -1px 0 #f4778d ,  
+                           1px -1px 0 #f4778d ,
+                           -1px 1px 0 #f4778d ,
+                            1px 1px 0 #f4778d ` }}
                         >
                           {item.subtitle}
                         </p>
