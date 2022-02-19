@@ -115,13 +115,16 @@ export default function HomePage({ data, metadata }) {
                       {item.subtitle && (
                         <p
                           className="h3 text-white"
-                          style={{ fontWeight: 400, textStroke: "1px #f4778d ",
-                          // color: white;
-                          textShadow: `2px 2px 0 #f4778d ,
+                          style={{
+                            fontWeight: 400,
+                            textStroke: "1px #f4778d ",
+                            // color: white;
+                            textShadow: `2px 2px 0 #f4778d ,
                           -1px -1px 0 #f4778d ,  
                            1px -1px 0 #f4778d ,
                            -1px 1px 0 #f4778d ,
-                            1px 1px 0 #f4778d ` }}
+                            1px 1px 0 #f4778d `
+                          }}
                         >
                           {item.subtitle}
                         </p>
@@ -165,19 +168,7 @@ export default function HomePage({ data, metadata }) {
             <iframe
               title="The Oasis Rancho 51 Date Garden"
               className="embed-responsive-item"
-              src="https://www.youtube.com/embed/juIMFmirXDU?rel=0"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      </section>
-      <section className="section">
-        <div className="container px-0">
-          <div className="embed-responsive embed-responsive-16by9">
-            <iframe
-              title="Rancho 51"
-              className="embed-responsive-item"
-              src="https://www.youtube.com/embed/8-7jkW0ReGQ?rel=0"
+              src="https://www.youtube.com/embed/kbNAsyB88uc?rel=0"
               allowFullScreen
             ></iframe>
           </div>
