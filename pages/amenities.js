@@ -45,7 +45,7 @@ AmenitiesPage.getInitialProps = async () => {
   const metadata = {
     title: "Amenities",
     description:
-      "The Coachella Rancho 51 Glamping Experience, less than 2 miles away from the festival grounds.  Our “Pop-Up” Tent Camping Ranch Resort has plenty of palm trees, providing unlimited shade, along with lush green grass, a relaxing pool and beautiful mountain views. festival campgrounds allows you to get the most out of your camping experience with 24 hour security, restroom trailers with flushable toilets, hot and cold showers, blow dry and beauty bar, yoga, charging stations, local food trucks, helicopter rides and much more. Festival access is convenient as we provide shuttle service. The experience of Camping, combined with the comforts of resort living, Festival Campgrounds take camping to a whole new level."
+      "The Coachella Rancho 51 Glamping Experience, less than 2 miles away from the festival grounds.  Our “Pop-Up” Tent Camping Ranch Resort has plenty of palm trees, providing unlimited shade, along with lush green grass, a relaxing pool and beautiful mountain views. festival campgrounds allows you to get the most out of your camping experience with 24 hour security, restroom trailers with flushable toilets, hot and cold showers, blow dry and beauty bar, yoga, charging stations, local food trucks and much more. Festival access is convenient as we provide shuttle service. The experience of Camping, combined with the comforts of resort living, Festival Campgrounds take camping to a whole new level."
   };
   return {
     data: data.default,
