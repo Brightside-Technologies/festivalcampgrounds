@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Layout from "../containers/Layout";
 import Testimonials from "../components/Testimonials";
 import Mask from "../components/Mask";
+import Button from "../components/Button";
 
 const Icon = styled.i`
   height: 36px;
@@ -161,6 +162,24 @@ export default function HomePage({ data, metadata }) {
             <span className="sr-only">Previous</span>{" "}
           </a>
         </Carousel>
+        <Button
+          href="/camping/rancho-51"
+          className="btn-lg"
+          style={{
+            position: "absolute",
+            top: "80%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            zIndex: 1000,
+            padding: "0.5rem 1rem",
+            fontSize: "1.25rem",
+            fontWeight: 700,
+            border: "2px solid #2e2e2e",
+            color: "black"
+          }}
+        >
+          Book Now
+        </Button>
       </Hero>
       <section className="section">
         <div className="container px-0">
