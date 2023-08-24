@@ -29,10 +29,7 @@ export default class MyDocument extends Document {
         <body>
           <noscript
             dangerouslySetInnerHTML={{
-              __html: `
-               <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT864XJ5"
-                height="0" width="0" style="display:none;visibility:hidden"></iframe>
-              `
+              __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT864XJ5" height="0" width="0" style="display:none;visibility:hidden"></iframe>`
             }}
           />
           <Main />
