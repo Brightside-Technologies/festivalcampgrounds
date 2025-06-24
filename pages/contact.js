@@ -142,9 +142,9 @@ export default function ContactPage({ data, metadata }) {
                   <Icon className="fas fa-envelope" />
                   <a
                     className="text-dark"
-                    href="mailto:info@festivalcampgrounds.com"
+                    href="mailto:rancho51inc@gmail.com"
                   >
-                    info@festivalcampgrounds.com
+                    rancho51inc@gmail.com
                   </a>
                 </div>
                 {camps.map((c, index) => {
@@ -186,10 +186,10 @@ export default function ContactPage({ data, metadata }) {
                   Oops! There was an error. Please try again or email us
                   directly at{" "}
                   <a
-                    href="mailto:info@festivalcampgrounds.com"
+                    href="mailto:rancho51inc@gmail.com"
                     class="alert-link"
                   >
-                    info@festivalcampgrounds.com
+                    rancho51inc@gmail.com
                   </a>
                 </div>
               )}
