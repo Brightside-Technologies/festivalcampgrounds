@@ -5,6 +5,13 @@
 [context.development]
   environment = { NODE_ENV = "development", GA_ID = "0" }
 
+# ✅ Branch-specific config for the "upgrade" branch
+[context."upgrade"]
+  publish = "out"
+  command = "npm run build"
+  [context."upgrade".environment]
+    NODE_VERSION = "22.15.0"
+
 # Redirect old Netlify subdomain -> primary domain
 [[redirects]]
   from = "https://festivalcampgrounds.netlify.com/*"
