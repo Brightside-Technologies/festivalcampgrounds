@@ -82,13 +82,13 @@ export default function FCImage({
           : null,
         className
       )}
-      style={
-        fill
-          ? undefined
-          : width && height
-            ? { aspectRatio: `${width} / ${height}` }
-            : undefined
-      }
+      // style={
+      //   fill
+      //     ? undefined
+      //     : width && height
+      //       ? { aspectRatio: `${width} / ${height}` }
+      //       : undefined
+      // }
     >
       <Image
         src={normalizedSrc}
