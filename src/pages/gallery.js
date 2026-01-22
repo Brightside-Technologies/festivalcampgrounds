@@ -25,7 +25,7 @@ export default function GalleryPage({ data, metadata }) {
                   variant="gallery"
                   className="w-full"
                   imgClassName="w-full"
-                  sizes="(max-width: 639px) calc(100vw - 48px), (max-width: 1023px) calc((100vw - 48px) / 2), 384px"
+                  sizes="(max-width: 639px) calc(100vw - 48px), (max-width: 1023px) calc((100vw - 48px) / 2), 500px"
                   blur
                 />
 

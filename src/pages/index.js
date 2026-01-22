@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import clsx from "clsx";
 import { Car, Bike, Footprints } from "lucide-react";
 import CarouselDot from "@/components/CarouselDot";
+import FCImage from "@/components/FCImage";
 
 export default function HomePage({ data, metadata }) {
   const { title, description } = metadata;
@@ -25,9 +26,8 @@ export default function HomePage({ data, metadata }) {
 
   return (
     <Layout title={title} description={description}>
-      {/* Hero (was styled Hero) */}
+      {/* Hero */}
       <section className="relative flex h-[calc(100vh-3.25rem)] flex-col justify-between">
-        {/* Carousel wrapper (was styled Carousel) */}
         <div className="relative flex-grow flex-shrink-0 max-h-[calc(100vh-3.25rem)]">
           {/* Indicators */}
           <ol className="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 gap-2">
@@ -35,6 +35,7 @@ export default function HomePage({ data, metadata }) {
               const isActive = index === activeIndex;
               return (
                 <CarouselDot
+                  key={index}
                   className="border-2 border-white"
                   active={isActive}
                   onClick={() => setActiveIndex(index)}
@@ -56,17 +57,23 @@ export default function HomePage({ data, metadata }) {
                     isActive ? "opacity-100" : "opacity-0 pointer-events-none"
                   )}
                 >
-                  <img
-                    className="block h-[calc(100vh-3.25rem)] w-full object-cover object-center"
+                  {/* Use FCImage (full-bleed hero) */}
+                  <FCImage
                     src={item.image}
                     alt={item.title || "Hero image"}
+                    priority={index === 0}
+                    // This describes the true rendered width: full-viewport
+                    sizes="100vw"
+                    // Wrapper fills slide; image covers
+                    className="absolute inset-0"
+                    imgClassName="h-[calc(100vh-3.25rem)] w-full object-cover object-center"
+                    quality={75}
                   />
 
                   {/* Overlay for readability */}
                   <div
                     className={clsx(
                       "pointer-events-none absolute inset-0 z-[5]",
-                      // subtle dark vignette + bottom-heavy gradient
                       "bg-gradient-to-b from-black/50 via-black/35 to-black/70"
                     )}
                   />
@@ -74,19 +81,13 @@ export default function HomePage({ data, metadata }) {
                   {(item.title || item.subtitle) && (
                     <div className="absolute inset-0 z-10 flex flex-col items-center pt-12">
                       {item.title && (
-                        <h5
-                          className="text-center text-4xl font-bold text-white md:text-5xl lg:text-6xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
-                          style={{ fontWeight: 700 }}
-                        >
+                        <h5 className="text-center text-4xl font-bold text-white md:text-5xl lg:text-6xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]">
                           {item.title}
                         </h5>
                       )}
 
                       {item.subtitle && (
-                        <p
-                          className="mt-2 text-center text-2xl font-normal text-white md:text-3xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)]"
-                          style={{ fontWeight: 400 }}
-                        >
+                        <p className="mt-2 text-center text-2xl font-normal text-white md:text-3xl drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)]">
                           {item.subtitle}
                         </p>
                       )}
@@ -119,16 +120,15 @@ export default function HomePage({ data, metadata }) {
 
         <Button
           href="/camping/rancho-51"
-          className="absolute left-1/2 top-[80%] z-[900] -translate-x-1/2 -translate-y-1/2 px-4 py-2 text-xl font-bold border-2 border-black text-black"
+          className="absolute left-1/2 top-[80%] z-[900] -translate-x-1/2 -translate-y-1/2 border-2 border-black px-4 py-2 text-xl font-bold text-black"
         >
           Book Now
         </Button>
       </section>
 
-      {/* Section wrapper replacement: bootstrap `section` + container */}
+      {/* YouTube embed */}
       <section className="py-12 px-1">
         <div className="mx-auto w-full max-w-6xl px-0">
-          {/* 16:9 responsive embed */}
           <div className="relative w-full overflow-hidden pt-[56.25%]">
             <iframe
               title="The Oasis Rancho 51 Date Garden"
@@ -140,6 +140,7 @@ export default function HomePage({ data, metadata }) {
         </div>
       </section>
 
+      {/* Distance + map */}
       <section className="py-12 px-1">
         <div className="mx-auto w-full max-w-6xl px-0">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-12 md:items-start">
@@ -168,15 +169,22 @@ export default function HomePage({ data, metadata }) {
             </div>
 
             <div className="md:col-span-8">
-              <img src="/images/map.jpg" className="w-full" alt="Map" />
+              <FCImage
+                src="/images/map.jpg"
+                alt="Map"
+                className="w-full"
+                imgClassName="w-full object-cover"
+                sizes="(max-width: 767px) 100vw, 768px"
+                quality={75}
+              />
             </div>
           </div>
         </div>
       </section>
 
+      {/* Shorts embed */}
       <section className="py-12 px-1">
         <div className="mx-auto w-full max-w-6xl px-0">
-          {/* 9:16 responsive embed for YouTube Shorts */}
           <div className="relative w-full overflow-hidden pt-[56.25%]">
             <iframe
               title="Festival Campgrounds Short"
@@ -188,6 +196,7 @@ export default function HomePage({ data, metadata }) {
         </div>
       </section>
 
+      {/* Camping options */}
       <section className="py-12 px-1">
         <div className="mx-auto w-full max-w-6xl px-0">
           <h2 className="uppercase text-2xl font-semibold">Camping Options</h2>
@@ -199,10 +208,14 @@ export default function HomePage({ data, metadata }) {
                 className={clsx("w-full px-1", index === 0 && "lg:col-span-2")}
               >
                 <div className="flex h-full flex-col overflow-hidden bg-zinc-900 text-white shadow">
-                  <img
+                  <FCImage
                     src={option.images[0]}
                     alt={option.name}
-                    className="w-full flex-1 object-cover h-[200px]"
+                    className="w-full"
+                    imgClassName="h-[200px] w-full object-cover"
+                    // rendered ~ full width on mobile; ~ 1/3 or 2/3 of 6xl on lg
+                    sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 640px, 760px"
+                    quality={70}
                   />
                   <div className="flex-none p-4">
                     <h5 className="m-0 text-center text-lg font-semibold">
@@ -216,6 +229,8 @@ export default function HomePage({ data, metadata }) {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
       <section className="py-12 px-1">
         <div className="mx-auto w-full max-w-6xl px-0">
           <h2 className="mb-10 uppercase text-2xl font-semibold">
@@ -235,10 +250,13 @@ export default function HomePage({ data, metadata }) {
             </div>
 
             <div className="sm:col-span-7">
-              <img
+              <FCImage
                 src={featuredTestimonial.image}
-                className="w-full"
                 alt="Featured Testimonial"
+                className="w-full"
+                imgClassName="w-full object-cover"
+                sizes="(max-width: 639px) 100vw, (max-width: 1023px) 70vw, 700px"
+                quality={75}
               />
             </div>
           </div>
@@ -251,20 +269,25 @@ export default function HomePage({ data, metadata }) {
         </div>
       </section>
 
+      {/* Bottom masonry images */}
       <section className="py-12 px-1">
         <div className="mx-auto w-full max-w-6xl px-0">
           <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
-            {images.map((image, index) => {
-              return (
-                <div
-                  key={index}
-                  className="mb-4 break-inside-avoid overflow-hidden bg-zinc-900 text-white"
-                >
-                  <img src={image} className="w-full" alt="image gallery" />
-                  <div className="pointer-events-none absolute inset-0" />
-                </div>
-              );
-            })}
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className="mb-4 break-inside-avoid overflow-hidden bg-zinc-900 text-white"
+              >
+                <FCImage
+                  src={image}
+                  alt="image gallery"
+                  className="w-full"
+                  imgClassName="block w-full"
+                  sizes="(max-width: 639px) calc(100vw - 48px), (max-width: 1023px) calc((100vw - 48px) / 2), 500px"
+                  quality={65}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
