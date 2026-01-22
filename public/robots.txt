@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://festivalcampgrounds.com
+
+# Sitemaps
+Sitemap: https://festivalcampgrounds.com/sitemap.xml

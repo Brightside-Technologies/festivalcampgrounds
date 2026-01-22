@@ -1,0 +1,36 @@
+[
+  {
+    "text": "Yoga",
+    "images": ["/images/yoga-02.jpg"]
+  },
+  {
+    "text": "DJ",
+    "images": ["/images/f-99.jpg"]
+  },
+  {
+    "text": "Beauty Bar",
+    "images": ["/images/f-116.jpg"]
+  },
+  {
+    "text": "Massage",
+    "images": ["/images/f-134.jpg"]
+  },
+  {
+    "text": "Food",
+    "images": ["/images/fds-222.jpg"],
+    "video": "https://youtube.com/shorts/1Kn5aszp97o?si=4kNYl0pkAm16uuvl"
+  },
+  {
+    "text": "Bathrooms/Showers",
+    "images": ["/images/f-189.jpg"]
+  },
+  {
+    "text": "Pool",
+    "images": ["/images/f-92.jpg"]
+  },
+  {
+    "text": "Shuttles",
+    "images": ["/images/shuttle-service.jpg"],
+    "video": "https://youtube.com/shorts/-6sgDAGGgBQ?si=qxwL9pQyLOqdgYsT"
+  }
+]

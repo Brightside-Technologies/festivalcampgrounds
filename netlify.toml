@@ -1,9 +1,32 @@
 [build]
-    publish = "out"
-    command = "npm run export"
+  publish = "out"
+  command = "npm run build"
+
 [context.development]
-    environment = { NODE_ENV = "development",  GA_ID = "0" }
+  environment = { NODE_ENV = "development", GA_ID = "0" }
+
+# Redirect old Netlify subdomain -> primary domain
 [[redirects]]
-    from = "https://festivalcampgrounds.netlify.com/*"
-    to = "https://festivalcampgrounds.com/:splat"
-    status = 301
+  from = "https://festivalcampgrounds.netlify.com/*"
+  to = "https://festivalcampgrounds.com/:splat"
+  status = 301
+  force = true
+
+# Vanity Image CDN URL:
+# /img/images/foo.jpg?w=1200&q=75 -> /.netlify/images?url=/images/foo.jpg&w=1200&q=75
+[[redirects]]
+  from = "/img/*"
+  to = "/.netlify/images?url=/:splat"
+  status = 200
+
+# Cache originals (optional once you use /img everywhere, but fine to keep)
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, must-revalidate"
+
+# Cache optimized variants too (this is the important one)
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, must-revalidate"
