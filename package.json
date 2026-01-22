@@ -12,8 +12,6 @@
     "serve-out": "npx serve out -l 8001"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.11.2",
-    "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@next/third-parties": "^16.1.2",
     "await-to-js": "^2.1.1",
     "class-variance-authority": "^0.7.1",
