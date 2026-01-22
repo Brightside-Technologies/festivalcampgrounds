@@ -103,6 +103,7 @@ export default function FCImage({
         blurDataURL={canUseBlur ? blurDataURL : undefined}
         className={clsx("block", imgClassName)}
         style={{ objectFit, objectPosition }}
+        unoptimized={process.env.NODE_ENV === "development"}
         {...rest}
       />
     </span>
