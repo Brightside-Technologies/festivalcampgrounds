@@ -212,7 +212,7 @@ export default function HomePage({ data, metadata }) {
                     src={option.images[0]}
                     alt={option.name}
                     className="w-full"
-                    imgClassName="h-[200px] w-full object-cover"
+                    imgClassName="h-[300px] w-full object-cover"
                     // rendered ~ full width on mobile; ~ 1/3 or 2/3 of 6xl on lg
                     sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 640px, 760px"
                     quality={70}
