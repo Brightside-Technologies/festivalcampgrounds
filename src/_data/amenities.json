@@ -1,15 +1,18 @@
 [
   {
     "text": "Yoga",
-    "images": ["/images/yoga-02.jpg"]
+    "images": ["/images/yoga-02.jpg"],
+    "video": "https://youtube.com/shorts/9_MsJSrLF0E?si=zoVMVNUF3upbDMyF"
   },
   {
     "text": "DJ",
-    "images": ["/images/f-99.jpg"]
+    "images": ["/images/f-99.jpg"],
+    "video": "https://youtube.com/shorts/HQEwvAiwUfY?si=lwnYHU0ab-K6Oyrv"
   },
   {
     "text": "Beauty Bar",
-    "images": ["/images/f-116.jpg"]
+    "images": ["/images/f-116.jpg"],
+    "video": "https://youtu.be/yZ1qZHpV_I4?si=BrAH4B_xDSpzGfBR"
   },
   {
     "text": "Massage",
@@ -22,11 +25,13 @@
   },
   {
     "text": "Bathrooms/Showers",
-    "images": ["/images/f-189.jpg"]
+    "images": ["/images/f-189.jpg"],
+    "video": "https://youtube.com/shorts/-aywWTWqx_c?si=4st9kGXC9CSowEDb"
   },
   {
     "text": "Pool",
-    "images": ["/images/f-92.jpg"]
+    "images": ["/images/f-92.jpg"],
+    "video": "https://youtube.com/shorts/pAEqwpZsr8c?si=FJ1SBpBGrqk0xjHz"
   },
   {
     "text": "Shuttles",

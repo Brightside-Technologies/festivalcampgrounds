@@ -1,6 +1,88 @@
 import PageTitle from "../components/PageTitle";
 import Layout from "../containers/Layout";
 import Mask from "../components/Mask";
+import clsx from "clsx";
+
+function getYouTubeId(input) {
+  if (!input) return null;
+  if (/^[a-zA-Z0-9_-]{11}$/.test(input)) return input;
+
+  try {
+    const url = new URL(input);
+
+    if (url.hostname.includes("youtu.be")) {
+      return url.pathname.split("/").filter(Boolean)[0] || null;
+    }
+
+    const v = url.searchParams.get("v");
+    if (v) return v;
+
+    const parts = url.pathname.split("/").filter(Boolean);
+    const embedIndex = parts.indexOf("embed");
+    if (embedIndex >= 0 && parts[embedIndex + 1]) return parts[embedIndex + 1];
+
+    const shortsIndex = parts.indexOf("shorts");
+    if (shortsIndex >= 0 && parts[shortsIndex + 1])
+      return parts[shortsIndex + 1];
+
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+function YouTubeEmbed({ video, title }) {
+  const id = getYouTubeId(video);
+  if (!id) return null;
+
+  return (
+    <div className="relative h-full w-full">
+      <iframe
+        title={title || "Amenity video"}
+        className="absolute inset-0 h-full w-full"
+        src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      />
+    </div>
+  );
+}
+
+function AmenityCard({ amenity }) {
+  const hasVideo = Boolean(amenity.video);
+
+  return (
+    <article className="overflow-hidden rounded-md bg-black shadow-sm ring-2 ring-black">
+      {/* Header */}
+      <header className="flex items-center justify-between px-4 py-3">
+        <h4 className="text-sm font-extrabold uppercase tracking-wide text-white">
+          {amenity.text}
+        </h4>
+      </header>
+
+      {/* Body */}
+      <div className="relative h-[220px] bg-zinc-900">
+        {hasVideo ? (
+          <YouTubeEmbed video={amenity.video} title={amenity.text} />
+        ) : (
+          <img
+            src={amenity.images?.[0]}
+            alt={amenity.text}
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
+        )}
+
+        {/* Optional readability overlay for images only (videos usually already readable) */}
+        {!hasVideo && (
+          <div className="pointer-events-none absolute inset-0">
+            <Mask />
+          </div>
+        )}
+      </div>
+    </article>
+  );
+}
 
 export default function AmenitiesPage({ data, metadata }) {
   const { title, description } = metadata;
@@ -9,32 +91,15 @@ export default function AmenitiesPage({ data, metadata }) {
     <Layout title={`${title} - Festival Campgrounds`} description={description}>
       <section className="py-12 px-6">
         <div className="mx-auto w-full max-w-6xl px-0">
-          <PageTitle className="text-5xl md:text-6xl pt-3 pb-1">
+          <PageTitle className="pt-3 pb-1 text-5xl md:text-6xl">
             {title}
           </PageTitle>
-          <p className="mt-2">{description}</p>
+
+          {description ? <p className="mt-2">{description}</p> : null}
 
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
             {data.map((a, index) => (
-              <div key={index} className="w-full">
-                <div className="relative h-[200px] overflow-hidden bg-zinc-900 text-white shadow-sm">
-                  <img
-                    src={a.images[0]}
-                    alt={a.text}
-                    className="h-full w-full object-cover"
-                  />
-
-                  {/* Gradient mask overlay */}
-                  <Mask />
-
-                  {/* Text overlay */}
-                  <div className="absolute inset-0 flex items-end p-4">
-                    <h4 className="text-xl font-semibold drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]">
-                      {a.text}
-                    </h4>
-                  </div>
-                </div>
-              </div>
+              <AmenityCard key={index} amenity={a} />
             ))}
           </div>
         </div>
@@ -44,8 +109,7 @@ export default function AmenitiesPage({ data, metadata }) {
 }
 
 export async function getStaticProps() {
-  const dataAsync = import("../_data/amenities.json");
-  const data = await dataAsync;
+  const data = (await import("../_data/amenities.json")).default;
 
   const metadata = {
     title: "Amenities",
@@ -55,7 +119,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      data: data.default,
+      data,
       metadata
     }
   };
