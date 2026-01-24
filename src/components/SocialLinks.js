@@ -1,5 +1,4 @@
 import { Instagram, Facebook, Youtube } from "lucide-react";
-import clsx from "clsx";
 
 const TikTokIcon = ({ className }) => (
   <img src="/tiktok-icon.svg" alt="" className={className} />
@@ -21,13 +20,13 @@ const allSocialLinks = [
   {
     id: "tiktok",
     label: "TikTok link",
-    href: "https://www.tiktok.com/@festivalcampgrounds",
+    href: "https://www.tiktok.com/@rancho51_festivalcamping",
     Icon: TikTokIcon
   },
   {
     id: "youtube",
     label: "YouTube link",
-    href: "https://www.youtube.com/@festivalcampgrounds",
+    href: "https://www.youtube.com/@rancho51festivalcampground",
     Icon: Youtube
   }
 ];

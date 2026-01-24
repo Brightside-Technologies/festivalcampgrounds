@@ -1,58 +1,13 @@
 import PageTitle from "../components/PageTitle";
 import Layout from "../containers/Layout";
 import Mask from "../components/Mask";
-import clsx from "clsx";
-
-function getYouTubeId(input) {
-  if (!input) return null;
-  if (/^[a-zA-Z0-9_-]{11}$/.test(input)) return input;
-
-  try {
-    const url = new URL(input);
-
-    if (url.hostname.includes("youtu.be")) {
-      return url.pathname.split("/").filter(Boolean)[0] || null;
-    }
-
-    const v = url.searchParams.get("v");
-    if (v) return v;
-
-    const parts = url.pathname.split("/").filter(Boolean);
-    const embedIndex = parts.indexOf("embed");
-    if (embedIndex >= 0 && parts[embedIndex + 1]) return parts[embedIndex + 1];
-
-    const shortsIndex = parts.indexOf("shorts");
-    if (shortsIndex >= 0 && parts[shortsIndex + 1])
-      return parts[shortsIndex + 1];
-
-    return null;
-  } catch {
-    return null;
-  }
-}
-
-function YouTubeEmbed({ video, title }) {
-  const id = getYouTubeId(video);
-  if (!id) return null;
-
-  return (
-    <div className="relative h-full w-full">
-      <iframe
-        title={title || "Amenity video"}
-        className="absolute inset-0 h-full w-full"
-        src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      />
-    </div>
-  );
-}
+import YouTubeEmbed from "../components/YouTubeEmbed";
 
 function AmenityCard({ amenity }) {
   const hasVideo = Boolean(amenity.video);
 
   return (
-    <article className="overflow-hidden rounded-md bg-black shadow-sm ring-2 ring-black">
+    <article className="overflow-hidden rounded bg-black shadow-sm ring-2 ring-black">
       {/* Header */}
       <header className="flex items-center justify-between px-4 py-3">
         <h4 className="text-sm font-extrabold uppercase tracking-wide text-white">

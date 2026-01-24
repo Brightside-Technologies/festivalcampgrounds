@@ -90,7 +90,7 @@ export default function OptionDetailsPage({ camp, campingOption }) {
       <section className="px-0 py-12">
         <div className="w-full px-0">
           <ImageReel
-            containerClass="h-100"
+            containerClass="h-100 pb-10"
             itemClass="mx-1"
             centerMode
             images={campingOption.images}

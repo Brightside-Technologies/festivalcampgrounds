@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Layout from "../containers/Layout";
 import Testimonials from "../components/Testimonials";
 import Button from "../components/Button";
@@ -6,6 +7,8 @@ import clsx from "clsx";
 import { Car, Bike, Footprints } from "lucide-react";
 import CarouselDot from "@/components/CarouselDot";
 import FCImage from "@/components/FCImage";
+import YouTubeCarousel from "@/components/YouTubeCarousel";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 
 export default function HomePage({ data, metadata }) {
   const { title, description } = metadata;
@@ -129,14 +132,11 @@ export default function HomePage({ data, metadata }) {
       {/* YouTube embed */}
       <section className="py-12 px-1">
         <div className="mx-auto w-full max-w-6xl px-0">
-          <div className="relative w-full overflow-hidden pt-[56.25%]">
-            <iframe
-              title="The Oasis Rancho 51 Date Garden"
-              className="absolute inset-0 h-full w-full"
-              src="https://www.youtube.com/embed/kbNAsyB88uc?rel=0"
-              allowFullScreen
-            />
-          </div>
+          <YouTubeEmbed
+            className="h-[500px]"
+            title="The Oasis Rancho 51 Date Garden"
+            video="https://www.youtube.com/embed/kbNAsyB88uc?rel=0"
+          />
         </div>
       </section>
 
@@ -185,14 +185,18 @@ export default function HomePage({ data, metadata }) {
       {/* Shorts embed */}
       <section className="py-12 px-1">
         <div className="mx-auto w-full max-w-6xl px-0">
-          <div className="relative w-full overflow-hidden pt-[56.25%]">
+          <YouTubeEmbed
+            className="h-[500px]"
+            video="https://www.youtube.com/embed/pRP7ADtEbu8?rel=0"
+          />
+          {/* <div className="relative w-full overflow-hidden pt-[50%]">
             <iframe
               title="Festival Campgrounds Short"
               className="absolute inset-0 h-full w-full"
               src="https://www.youtube.com/embed/pRP7ADtEbu8?rel=0"
               allowFullScreen
             />
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -203,8 +207,9 @@ export default function HomePage({ data, metadata }) {
 
           <div className="mt-4 grid grid-cols-1 gap-4 auto-rows-[350px] lg:grid-cols-3">
             {camping_options.map((option, index) => (
-              <div
+              <Link
                 key={index}
+                href={`/accommodation/rancho-51/${option.slug}`}
                 className={clsx("w-full px-1", index === 0 && "lg:col-span-2")}
               >
                 <div className="flex h-full flex-col overflow-hidden bg-zinc-900 text-white shadow">
@@ -213,7 +218,6 @@ export default function HomePage({ data, metadata }) {
                     alt={option.name}
                     className="w-full"
                     imgClassName="h-[300px] w-full object-cover"
-                    // rendered ~ full width on mobile; ~ 1/3 or 2/3 of 6xl on lg
                     sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 640px, 760px"
                     quality={70}
                   />
@@ -224,7 +228,7 @@ export default function HomePage({ data, metadata }) {
                     <p className="text-center">{option.style}</p>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -264,6 +268,24 @@ export default function HomePage({ data, metadata }) {
           <div className="mt-6">
             <Testimonials
               testimonials={testimonials.filter((t) => !t.featured)}
+            />
+          </div>
+          <div className="my-6">
+            <YouTubeCarousel
+              containerClass="min-h-[350px] py-10"
+              itemClass="h-[350px]"
+              videos={[
+                {
+                  url: "https://youtu.be/ygSnPNg4Vnc?si=4segOvoQyqS6y9Jz"
+                },
+                {
+                  url: "https://youtube.com/shorts/ZWbUkcIi7S4"
+                },
+                {
+                  url: "https://youtube.com/shorts/wcmv-0falSs"
+                }
+              ]}
+              title="Festival Campgrounds"
             />
           </div>
         </div>
