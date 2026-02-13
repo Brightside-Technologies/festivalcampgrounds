@@ -11,6 +11,7 @@ const links = [
   { href: "/camping/rancho-51", label: "Camping", isDisabled: false },
   { href: "/info", label: "Info", isDisabled: false },
   { href: "/gallery", label: "Gallery", isDisabled: false },
+  { href: "/sponsors", label: "Sponsors", isDisabled: false },
   { href: "/contact", label: "Contact", isDisabled: false }
 ];
 
@@ -60,27 +61,27 @@ export default function Nav() {
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
           aria-label="Toggle navigation"
-          className="relative ml-auto block h-full w-12 bg-transparent md:hidden"
+          className="relative ml-auto block h-full w-12 flex-none shrink-0 overflow-visible bg-transparent md:hidden"
         >
           <span
             aria-hidden="true"
             className={clsx(
-              "absolute left-1/2 top-1/2 block h-[2px] w-4 -translate-x-1/2 bg-black transition-all duration-150 ease-out",
-              open ? "translate-y-[5px] rotate-45" : "-translate-y-[6px]"
+              "absolute left-1/2 top-1/2 block h-[2px] w-5 -translate-x-1/2 origin-center bg-black transition-all duration-150 ease-out",
+              open ? "translate-y-0 rotate-45" : "-translate-y-[6px]"
             )}
           />
           <span
             aria-hidden="true"
             className={clsx(
-              "absolute left-1/2 top-1/2 block h-[2px] w-4 -translate-x-1/2 bg-black transition-all duration-150 ease-out",
-              open ? "opacity-0" : "-translate-y-[1px] opacity-100"
+              "absolute left-1/2 top-1/2 block h-[2px] w-5 -translate-x-1/2 origin-center bg-black transition-all duration-150 ease-out",
+              open ? "scale-x-0 opacity-0" : "opacity-100"
             )}
           />
           <span
             aria-hidden="true"
             className={clsx(
-              "absolute left-1/2 top-1/2 block h-[2px] w-4 -translate-x-1/2 bg-black transition-all duration-150 ease-out",
-              open ? "-translate-y-[5px] -rotate-45" : "translate-y-[4px]"
+              "absolute left-1/2 top-1/2 block h-[2px] w-5 -translate-x-1/2 origin-center bg-black transition-all duration-150 ease-out",
+              open ? "translate-y-0 -rotate-45" : "translate-y-[6px]"
             )}
           />
         </button>
@@ -117,9 +118,12 @@ export default function Nav() {
       {/* Links: mobile collapse */}
       <div
         className={clsx(
-          "absolute left-0 right-0 top-[3.25rem] md:hidden",
-          open ? "block" : "hidden"
+          "absolute left-0 right-0 top-[3.25rem] overflow-hidden transition-all duration-300 ease-out md:hidden",
+          open
+            ? "max-h-[70vh] translate-y-0 opacity-100 pointer-events-auto"
+            : "max-h-0 -translate-y-2 opacity-0 pointer-events-none"
         )}
+        aria-hidden={!open}
       >
         <div className="bg-white p-2 shadow">
           <ul className="flex flex-col">
